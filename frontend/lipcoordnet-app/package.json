@@ -22,6 +22,7 @@
     "expo-file-system": "~18.1.9",
     "expo-linear-gradient": "14.1.4",
     "expo-router": "~5.0.6",
+    "expo-speech": "^13.1.7",
     "expo-video": "^2.1.9",
     "firebase": "^11.7.1",
     "react": "19.0.0",
