@@ -1,158 +1,157 @@
-import React, { useState, useEffect, useCallback } from 'react';
-  import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-  import { useNavigation, NavigationProp, StackActions } from '@react-navigation/native';
-  import * as DocumentPicker from 'expo-document-picker';
-  import * as FileSystem from 'expo-file-system';
-  import axios from 'axios';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Platform, Image, ActivityIndicator } from 'react-native';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+import * as DocumentPicker from 'expo-document-picker';
+import * as FileSystem from 'expo-file-system';
+import { useTheme } from '../ThemeContext';
+import { LinearGradient } from 'expo-linear-gradient';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
-  // Updated type definition to include initialParams
-  type NavigationParams = {
-    screen: string;
-    params: { videoUri: string; prediction: any };
-    initialParams?: { videoUri: string; prediction: any };
-  };
+type RootStackParamList = {
+  Upload: undefined;
+  OutputStack: { screen: string; params: { videoUri?: string; prediction?: string; audioUri?: string } };
+};
 
-  type RootParamList = {
-    OutputStack: NavigationParams;
-  };
+export default function UploadScreen() {
+  const { theme, themeStyles } = useTheme();
+  const currentTheme = themeStyles[theme];
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const [isUploading, setIsUploading] = useState(false);
 
-  export default function UploadScreen() {
-    const navigation = useNavigation<NavigationProp<RootParamList>>();
-    const [videoUri, setVideoUri] = useState<string | null>(null);
-    const [isUploading, setIsUploading] = useState(false);
+  const pickDocument = async () => {
+    console.log('Launching document picker...');
+    setIsUploading(true);
+    try {
+      const result = await DocumentPicker.getDocumentAsync({ type: 'video/*' });
+      console.log('DocumentPicker result:', result);
 
-    const pickDocument = async () => {
-      try {
-        console.log('Launching document picker...');
-        const result = await DocumentPicker.getDocumentAsync({
-          type: 'video/*',
-          copyToCacheDirectory: true,
-        });
-        console.log('DocumentPicker result:', JSON.stringify(result));
+      if (!result.canceled && result.assets) {
+        const videoUri = result.assets[0].uri;
+        console.log('Original videoUri:', videoUri);
 
-        if (!result.canceled && result.assets && result.assets.length > 0) {
-          const { uri } = result.assets[0];
-          console.log('Original videoUri:', uri);
+        // Copy the video to a temporary location
+        const tempUri = `${FileSystem.cacheDirectory}temp-video-${Date.now()}.mp4`;
+        await FileSystem.copyAsync({ from: videoUri, to: tempUri });
+        console.log('Copied video to:', tempUri);
 
-          const newUri = `${FileSystem.cacheDirectory}temp-video-${Date.now()}.mp4`;
-          await FileSystem.copyAsync({ from: uri, to: newUri });
-          console.log('Copied video to:', newUri);
-
-          setVideoUri(newUri);
-        }
-      } catch (error: unknown) {
-        console.error('Error in pickDocument:', error);
-        Alert.alert('Error', 'Failed to pick video. Please try again.');
-      }
-    };
-
-    const uploadVideo = useCallback(async () => {
-      if (!videoUri) {
-        Alert.alert('Error', 'Please select a video first.');
-        return;
-      }
-
-      if (isUploading) {
-        console.log('Upload in progress, aborting uploadVideo');
-        return;
-      }
-
-      setIsUploading(true);
-      const formData = new FormData();
-      formData.append('file', {
-        uri: videoUri,
-        name: 'video.mp4',
-        type: 'video/mp4',
-      } as any);
-
-      try {
+        // Upload to backend
         console.log('Uploading video to backend...');
-        const response = await axios.post('http://192.168.100.19:8080/predict', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' },
-          timeout: 300000,
+        const formData = new FormData();
+        formData.append('file', {
+          uri: tempUri,
+          name: result.assets[0].name,
+          type: result.assets[0].mimeType ?? 'video/mp4', // Default to 'video/mp4' if undefined
+        } as any); // Use 'as any' to bypass strict typing for FormData.append
+
+        const response = await fetch('http://192.168.100.19:8080/predict', {
+          method: 'POST',
+          body: formData,
         });
-        console.log('Backend response:', response.data);
+        const data = await response.json();
+        console.log('Backend response:', data);
 
-        const prediction = response.data.prediction;
-        if (prediction) {
-          console.log('Navigating to OutputSelection with prediction:', prediction);
-          navigation.navigate('OutputStack', {
-            screen: 'OutputSelection',
-            params: {
-              videoUri: encodeURIComponent(videoUri),
-              prediction,
-            },
-            initialParams: {
-              videoUri: encodeURIComponent(videoUri),
-              prediction,
-            },
-          });
-        } else {
-          throw new Error('No prediction in response');
-        }
-      } catch (error: unknown) {
-        console.error('Error in uploadVideo:', error);
-        if ((error as any).response) {
-          console.error('Response error:', (error as any).response.data);
-        } else if ((error as any).request) {
-          console.error('Request error:', (error as any).request);
-        } else {
-          console.error('Error message:', (error as Error).message);
-        }
-        Alert.alert('Upload Error', 'Failed to upload video. Please try again.');
-      } finally {
-        setIsUploading(false);
+        // Navigate to OutputSelection with the correct params
+        console.log('Navigating to OutputSelection with prediction:', data.prediction);
+        navigation.navigate('OutputStack', {
+          screen: 'OutputSelection',
+          params: {
+            videoUri: data.videoUri,
+            prediction: data.prediction,
+            audioUri: data.audioUri,
+          },
+        });
       }
-    }, [videoUri, isUploading, navigation]);
+    } catch (error) {
+      console.error('Upload error:', error);
+    } finally {
+      setIsUploading(false);
+    }
+  };
 
-    useEffect(() => {
-      return () => {
-        setIsUploading(false);
-      };
-    }, []);
-
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Upload Video</Text>
-        <TouchableOpacity style={styles.button} onPress={pickDocument}>
-          <Text style={styles.buttonText}>Pick a Video</Text>
-        </TouchableOpacity>
-        {videoUri && (
+  return (
+    <View style={[styles.container, { backgroundColor: currentTheme.backgroundColor }]}>
+      <Image
+        source={require('../assets/images/logo.jpg')}
+        style={styles.logo}
+        accessibilityLabel="VisioVox Logo"
+      />
+      <Text style={[styles.header, { color: currentTheme.textColor }]}>
+        Upload Your Video
+      </Text>
+      <Text style={[styles.subHeader, { color: currentTheme.textColor }]}>
+        Select a video to process with lip-reading technology
+      </Text>
+      {isUploading ? (
+        <ActivityIndicator size="large" color={currentTheme.primaryColor} style={styles.loader} />
+      ) : (
+        <LinearGradient
+          colors={theme === 'dark' ? ['#000080', '#1E90FF'] : ['#1E90FF', '#6200ea']}
+          style={styles.button}
+        >
           <TouchableOpacity
-            style={[styles.button, isUploading && styles.buttonDisabled]}
-            onPress={uploadVideo}
+            onPress={pickDocument}
+            accessibilityLabel="Upload Video"
+            accessibilityRole="button"
             disabled={isUploading}
           >
-            <Text style={styles.buttonText}>{isUploading ? 'Uploading...' : 'Upload Video'}</Text>
+            <Text style={styles.buttonText}>Upload Video</Text>
           </TouchableOpacity>
-        )}
-      </View>
-    );
-  }
+        </LinearGradient>
+      )}
+    </View>
+  );
+}
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 20,
-    },
-    title: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: 20,
-    },
-    button: {
-      backgroundColor: '#007AFF',
-      padding: 15,
-      borderRadius: 10,
-      marginVertical: 10,
-    },
-    buttonDisabled: {
-      backgroundColor: '#A9A9A9',
-    },
-    buttonText: {
-      color: '#FFFFFF',
-      fontSize: 16,
-    },
-  });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  logo: {
+    width: 200,
+    height: 60,
+    marginBottom: 30,
+    resizeMode: 'contain',
+  },
+  header: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  subHeader: {
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 40,
+    paddingHorizontal: 20,
+  },
+  button: {
+    paddingVertical: 15,
+    paddingHorizontal: 50,
+    borderRadius: 25,
+    alignItems: 'center',
+    width: '80%',
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  loader: {
+    marginBottom: 20,
+  },
+});
