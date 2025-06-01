@@ -1,154 +1,215 @@
 import React, { useState, useEffect } from 'react';
-  import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-  import { useNavigation, NavigationProp } from '@react-navigation/native';
-  import { useTheme } from '../ThemeContext';
-  import { LinearGradient } from 'expo-linear-gradient';
-  import { auth } from '../firebaseConfig';
-  import Icon from 'react-native-vector-icons/MaterialIcons';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Platform, ActivityIndicator } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
+import { auth } from '../firebaseConfig';
+import { updateProfile, updatePassword, reauthenticateWithCredential, EmailAuthProvider, AuthError } from 'firebase/auth';
 
-  type RootStackParamList = {
-    Upload: undefined;
+export default function ProfileScreen() {
+  const [username, setUsername] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [isLoadingUsername, setIsLoadingUsername] = useState(false);
+  const [isLoadingPassword, setIsLoadingPassword] = useState(false);
+  const opacity = useSharedValue(0);
+
+  useEffect(() => {
+    const user = auth.currentUser;
+    if (user) {
+      console.log('ProfileScreen - Initial Display Name:', user.displayName);
+      setUsername(user.displayName || user.email?.split('@')[0] || 'User');
+    }
+    opacity.value = withTiming(1, { duration: 600 });
+  }, []);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    opacity: opacity.value,
+  }));
+
+  const handleUpdateUsername = async () => {
+    const user = auth.currentUser;
+    if (!user) {
+      alert('No user is logged in.');
+      return;
+    }
+
+    if (!username) {
+      alert('Please enter a username.');
+      return;
+    }
+
+    setIsLoadingUsername(true);
+    try {
+      console.log('Updating username to:', username);
+      await updateProfile(user, { displayName: username });
+      console.log('Username updated on server. New Display Name:', user.displayName);
+      alert('Username updated successfully! Please log out and log back in to see the change on the home screen.');
+    } catch (error) {
+      const authError = error as AuthError; // Cast error to AuthError
+      console.error('Failed to update username:', authError.message);
+      alert('Failed to update username: ' + authError.message);
+    } finally {
+      setIsLoadingUsername(false);
+    }
   };
 
-  type User = {
-    name?: string;
-    email?: string;
+  const handleUpdatePassword = async () => {
+    const user = auth.currentUser;
+    if (!user || !user.email) {
+      alert('No user is logged in.');
+      return;
+    }
+
+    if (!currentPassword || !newPassword) {
+      alert('Please enter both current and new passwords.');
+      return;
+    }
+
+    setIsLoadingPassword(true);
+    try {
+      const credential = EmailAuthProvider.credential(user.email, currentPassword);
+      await reauthenticateWithCredential(user, credential);
+      await updatePassword(user, newPassword);
+      alert('Password updated successfully! Please log out and log back in with your new password.');
+      setNewPassword('');
+      setCurrentPassword('');
+    } catch (error) {
+      const authError = error as AuthError; // Cast error to AuthError
+      alert('Failed to update password: ' + authError.message);
+    } finally {
+      setIsLoadingPassword(false);
+    }
   };
 
-  export default function ProfileScreen() {
-    const [user, setUser] = useState<User | null>(null);
-    const [userName, setUserName] = useState<string>('');
-    const { theme, themeStyles } = useTheme();
-    const currentTheme = themeStyles[theme];
-    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-
-    useEffect(() => {
-      if (auth.currentUser) {
-        setUserName(auth.currentUser.displayName || '');
-        setUser({
-          name: auth.currentUser.displayName || '',
-          email: auth.currentUser.email || '',
-        });
-      }
-    }, []);
-
-    const handleUpdateProfile = () => {
-      if (auth.currentUser) {
-        auth.currentUser
-          .updateProfile({ displayName: userName })
-          .then(() => {
-            setUser((prev) => prev ? { ...prev, name: userName } : { name: userName, email: auth.currentUser?.email || '' });
-            Alert.alert('Success', 'Profile updated successfully');
-          })
-          .catch((err: Error) => {
-            console.log('Update failed:', err.message);
-            Alert.alert('Update Failed', err.message);
-          });
-      }
-    };
-
-    const handleLogout = () => {
-      auth.signOut()
-        .then(() => {
-          navigation.navigate('Upload');
-        })
-        .catch((err: Error) => {
-          console.log('Logout failed:', err.message);
-          Alert.alert('Logout Failed', err.message);
-        });
-    };
-
-    return (
-      <View style={[styles.container, { backgroundColor: currentTheme.background }]}>
-        <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => navigation.navigate('Upload')}
-          accessibilityLabel="Go Back"
-          accessibilityRole="button"
-        >
-          <Icon name="arrow-back" size={24} color={currentTheme.textColor} />
-        </TouchableOpacity>
-        <Text style={[styles.header, { color: currentTheme.textColor }]}>Profile</Text>
-        {user && (
-          <View>
-            <Text style={[styles.label, { color: currentTheme.textColor }]}>Name:</Text>
-            <TextInput
-              style={[styles.input, { borderColor: currentTheme.primaryColor, color: currentTheme.textColor }]}
-              value={userName}
-              onChangeText={setUserName}
-              placeholder="Enter your name"
-              placeholderTextColor="#888"
-            />
-            <Text style={[styles.label, { color: currentTheme.textColor }]}>Email:</Text>
-            <Text style={[styles.text, { color: currentTheme.textColor }]}>{user.email}</Text>
-          </View>
-        )}
-        <LinearGradient
-          colors={theme === 'dark' ? ['#000080', '#1E90FF'] : ['#1E90FF', '#6200ea']}
-          style={[styles.button, { backgroundColor: currentTheme.buttonBackground }]}
-        >
-          <TouchableOpacity onPress={handleUpdateProfile} accessibilityLabel="Update Profile">
-            <Text style={styles.buttonText}>Update Profile</Text>
+  return (
+    <View style={styles.container}>
+      <Animated.View style={[styles.formContainer, animatedStyle]}>
+        <Text style={styles.title}>Profile Settings</Text>
+        <View style={styles.inputContainer}>
+          <Icon name="person" size={20} color="#60A5FA" style={styles.icon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Username"
+            placeholderTextColor="#9CA3AF"
+            value={username}
+            onChangeText={setUsername}
+            autoCapitalize="none"
+            editable={!isLoadingUsername}
+          />
+        </View>
+        <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.button}>
+          <TouchableOpacity
+            onPress={handleUpdateUsername}
+            disabled={isLoadingUsername}
+            accessibilityLabel="Update Username"
+            accessibilityRole="button"
+          >
+            <Text style={styles.buttonText}>
+              {isLoadingUsername ? <ActivityIndicator color="#F9FAFB" /> : 'Update Username'}
+            </Text>
           </TouchableOpacity>
         </LinearGradient>
-        <LinearGradient
-          colors={theme === 'dark' ? ['#000080', '#1E90FF'] : ['#1E90FF', '#6200ea']}
-          style={[styles.button, { backgroundColor: currentTheme.buttonBackground }]}
-        >
-          <TouchableOpacity onPress={handleLogout} accessibilityLabel="Logout">
-            <Text style={styles.buttonText}>Logout</Text>
+
+        <View style={styles.inputContainer}>
+          <Icon name="lock" size={20} color="#60A5FA" style={styles.icon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Current Password"
+            placeholderTextColor="#9CA3AF"
+            value={currentPassword}
+            onChangeText={setCurrentPassword}
+            secureTextEntry
+            editable={!isLoadingPassword}
+          />
+        </View>
+        <View style={styles.inputContainer}>
+          <Icon name="lock" size={20} color="#60A5FA" style={styles.icon} />
+          <TextInput
+            style={styles.input}
+            placeholder="New Password"
+            placeholderTextColor="#9CA3AF"
+            value={newPassword}
+            onChangeText={setNewPassword}
+            secureTextEntry
+            editable={!isLoadingPassword}
+          />
+        </View>
+        <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.button}>
+          <TouchableOpacity
+            onPress={handleUpdatePassword}
+            disabled={isLoadingPassword}
+            accessibilityLabel="Update Password"
+            accessibilityRole="button"
+          >
+            <Text style={styles.buttonText}>
+              {isLoadingPassword ? <ActivityIndicator color="#F9FAFB" /> : 'Update Password'}
+            </Text>
           </TouchableOpacity>
         </LinearGradient>
-      </View>
-    );
-  }
+      </Animated.View>
+    </View>
+  );
+}
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 20,
-    },
-    backButton: {
-      position: 'absolute',
-      top: 40,
-      left: 20,
-      zIndex: 10,
-    },
-    header: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: 20,
-    },
-    label: {
-      fontSize: 16,
-      marginBottom: 5,
-    },
-    input: {
-      width: '80%',
-      height: 50,
-      borderWidth: 1,
-      borderRadius: 5,
-      marginBottom: 15,
-      paddingHorizontal: 10,
-    },
-    text: {
-      fontSize: 16,
-      marginBottom: 15,
-    },
-    button: {
-      paddingVertical: 12,
-      paddingHorizontal: 40,
-      borderRadius: 25,
-      marginVertical: 10,
-      width: '80%',
-      alignItems: 'center',
-    },
-    buttonText: {
-      color: '#FFFFFF',
-      fontSize: 16,
-      fontWeight: '600',
-      textAlign: 'center',
-    },
-  });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F3F4F6',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  formContainer: {
+    width: '100%',
+    maxWidth: 400,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 15,
+    padding: 20,
+    elevation: 5,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 6,
+      },
+    }),
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#1E3A8A',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F9FAFB',
+    borderRadius: 10,
+    marginBottom: 15,
+    paddingHorizontal: 10,
+  },
+  icon: {
+    marginRight: 10,
+  },
+  input: {
+    flex: 1,
+    height: 50,
+    fontSize: 16,
+    color: '#1E3A8A',
+  },
+  button: {
+    borderRadius: 10,
+    paddingVertical: 15,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 20,
+  },
+  buttonText: {
+    color: '#F9FAFB',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+});

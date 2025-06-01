@@ -1,128 +1,196 @@
-import React, { useState, useContext } from 'react';
-  import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-  import { ThemeContext } from '../ThemeContext';
-  import { auth } from '../firebaseConfig';
-  import { createUserWithEmailAndPassword } from 'firebase/auth';
-  import { useNavigation, NavigationProp } from '@react-navigation/native';
-  import { LinearGradient } from 'expo-linear-gradient';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Platform, ActivityIndicator } from 'react-native';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
+import { auth } from '../firebaseConfig';
+import { createUserWithEmailAndPassword, updateProfile, AuthError } from 'firebase/auth';
 
-  type RootParamList = {
-    login: undefined;
+type RootStackParamList = {
+  signup: undefined;
+  login: undefined;
+};
+
+export default function SignupScreen() {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const opacity = useSharedValue(0);
+
+  useEffect(() => {
+    opacity.value = withTiming(1, { duration: 600 });
+  }, []);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    opacity: opacity.value,
+  }));
+
+  const handleSignup = async () => {
+    if (!username || !email || !password) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log('SignupScreen - User created:', user.uid);
+      await updateProfile(user, { displayName: username });
+      console.log('SignupScreen - Display Name set to:', user.displayName);
+      navigation.reset({ index: 0, routes: [{ name: 'login' }] });
+    } catch (error) {
+      const authError = error as AuthError; // Cast error to AuthError
+      console.error('Signup Failed:', authError.message);
+      alert('Signup Failed: ' + authError.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  export default function SignupScreen() {
-    const { theme, themeStyles } = useContext(ThemeContext);
-    const currentTheme = themeStyles[theme];
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    const navigation = useNavigation<NavigationProp<RootParamList>>();
-
-    const handleSignup = async () => {
-      try {
-        await createUserWithEmailAndPassword(auth, email, password);
-        // Navigation to Home is handled by _layout.tsx
-      } catch (err: unknown) {
-        setError('Failed to sign up: ' + (err as Error).message);
-      }
-    };
-
-    const navigateToLogin = () => {
-      navigation.navigate('login');
-    };
-
-    return (
-      <View style={[styles.container, { backgroundColor: currentTheme.backgroundColor }]}>
-        <Image
-          source={require('../assets/images/logo.jpg')}
-          style={styles.logo}
-          accessibilityLabel="VisioVox Logo"
-        />
-        <Text style={[styles.header, { color: currentTheme.textColor }]}>Sign Up</Text>
-        <TextInput
-          style={[styles.input, { color: currentTheme.textColor, borderColor: currentTheme.primaryColor }]}
-          placeholder="Email"
-          placeholderTextColor={theme === 'dark' ? '#AAA' : '#666'}
-          value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
-          autoCapitalize="none"
-        />
-        <TextInput
-          style={[styles.input, { color: currentTheme.textColor, borderColor: currentTheme.primaryColor }]}
-          placeholder="Password"
-          placeholderTextColor={theme === 'dark' ? '#AAA' : '#666'}
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-        />
-        <LinearGradient
-          colors={theme === 'dark' ? ['#000080', '#1E90FF'] : ['#1E90FF', '#6200ea']}
-          style={styles.button}
-        >
-          <TouchableOpacity onPress={handleSignup} accessibilityLabel="Sign Up" accessibilityRole="button">
-            <Text style={styles.buttonText}>Sign Up</Text>
+  return (
+    <View style={styles.container}>
+      <Image
+        source={require('../assets/images/logo.jpg')}
+        style={styles.logo}
+        resizeMode="contain"
+        accessibilityLabel="VisioVox Logo"
+      />
+      <Animated.View style={[styles.formContainer, animatedStyle]}>
+        <Text style={styles.title}>Create Account</Text>
+        <View style={styles.inputContainer}>
+          <Icon name="person" size={20} color="#60A5FA" style={styles.icon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Username"
+            placeholderTextColor="#9CA3AF"
+            value={username}
+            onChangeText={setUsername}
+            autoCapitalize="none"
+            editable={!isLoading}
+          />
+        </View>
+        <View style={styles.inputContainer}>
+          <Icon name="email" size={20} color="#60A5FA" style={styles.icon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Email"
+            placeholderTextColor="#9CA3AF"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            editable={!isLoading}
+          />
+        </View>
+        <View style={styles.inputContainer}>
+          <Icon name="lock" size={20} color="#60A5FA" style={styles.icon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            placeholderTextColor="#9CA3AF"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+            editable={!isLoading}
+          />
+        </View>
+        <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.button}>
+          <TouchableOpacity
+            onPress={handleSignup}
+            disabled={isLoading}
+            accessibilityLabel="Sign Up"
+            accessibilityRole="button"
+          >
+            <Text style={styles.buttonText}>
+              {isLoading ? <ActivityIndicator color="#F9FAFB" /> : 'Sign Up'}
+            </Text>
           </TouchableOpacity>
         </LinearGradient>
-        <TouchableOpacity onPress={navigateToLogin} accessibilityLabel="Go to Login">
-          <Text style={[styles.link, { color: currentTheme.primaryColor }]}>
-            Already have an account? Log In
-          </Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('login')}
+          disabled={isLoading}
+          accessibilityLabel="Already have an account? Log in"
+          accessibilityRole="button"
+        >
+          <Text style={styles.link}>Already have an account? Log in</Text>
         </TouchableOpacity>
-        {error ? (
-          <Text style={[styles.error, { color: theme === 'dark' ? '#FF4D4D' : '#D32F2F' }]}>
-            {error}
-          </Text>
-        ) : null}
-      </View>
-    );
-  }
+      </Animated.View>
+    </View>
+  );
+}
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 20,
-    },
-    logo: {
-      width: 200,
-      height: 60,
-      marginBottom: 40,
-    },
-    header: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: 20,
-    },
-    input: {
-      width: '100%',
-      padding: 12,
-      borderWidth: 1,
-      borderRadius: 8,
-      marginVertical: 10,
-      fontSize: 16,
-    },
-    button: {
-      paddingVertical: 12,
-      paddingHorizontal: 40,
-      borderRadius: 25,
-      marginVertical: 10,
-      width: '100%',
-      alignItems: 'center',
-    },
-    buttonText: {
-      color: '#FFFFFF',
-      fontSize: 16,
-      fontWeight: '600',
-    },
-    link: {
-      marginTop: 10,
-      fontSize: 14,
-    },
-    error: {
-      fontSize: 14,
-      marginTop: 10,
-      textAlign: 'center',
-    },
-  });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F3F4F6',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  logo: {
+    width: 150,
+    height: 50,
+    marginBottom: 40,
+  },
+  formContainer: {
+    width: '100%',
+    maxWidth: 400,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 15,
+    padding: 20,
+    elevation: 5,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 6,
+      },
+    }),
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#1E3A8A',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F9FAFB',
+    borderRadius: 10,
+    marginBottom: 15,
+    paddingHorizontal: 10,
+  },
+  icon: {
+    marginRight: 10,
+  },
+  input: {
+    flex: 1,
+    height: 50,
+    fontSize: 16,
+    color: '#1E3A8A',
+  },
+  button: {
+    borderRadius: 10,
+    paddingVertical: 15,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  buttonText: {
+    color: '#F9FAFB',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  link: {
+    color: '#60A5FA',
+    textAlign: 'center',
+    marginTop: 15,
+    fontSize: 14,
+  },
+});

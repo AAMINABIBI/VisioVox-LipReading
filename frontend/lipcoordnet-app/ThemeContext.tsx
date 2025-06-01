@@ -12,7 +12,7 @@ import React, { createContext, useContext, useState } from 'react';
   };
 
   const lightTheme: ThemeStyles = {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#d5e9f9',
     textColor: '#000000',
     primaryColor: '#1E90FF',
     cardBackground: '#F5F5F5',
