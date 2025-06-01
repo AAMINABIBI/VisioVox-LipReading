@@ -7,7 +7,8 @@ export default ({ config }) => {
       ...config.expo,
       name: "LipCoordNet-app",
       slug: "lipcoordnet-app",
-      scheme: "lipcoordnetapp", // Add this line
+      scheme: "lipcoordnetapp",
+      version: "1.0.0",
       extra: {
         firebase: {
           apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY || "default-api-key",
@@ -18,24 +19,18 @@ export default ({ config }) => {
           appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID || "default-app-id",
           measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID || "default-measurement-id",
         },
-        auth: {
-          google: {
-            expoClientId: process.env.EXPO_PUBLIC_GOOGLE_EXPO_CLIENT_ID || "619681158693-2659po4jq9kqo2ht7qgglnnfu4jubsjl.apps.googleusercontent.com",
-            iosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID || "YOUR_IOS_CLIENT_ID",
-            androidClientId: process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID || "619681158693-v2o5b2pkk368ouedb6iqoml52cf6319t.apps.googleusercontent.com",
-          },
-        },
         eas: {
           projectId: process.env.EXPO_PUBLIC_EAS_PROJECT_ID || "cf89d750-7ef8-4861-93c0-278edcd416ae",
         },
       },
       android: {
-        package: "host.exp.exponent",
+        package: "com.lipcoordnet.app",
+        versionCode: 1,
         googleServicesFile: "./google-services.json",
       },
       ios: {
-        bundleIdentifier: "host.exp.exponent",
-        googleServicesFile: "./GoogleService-Info.plist",
+        bundleIdentifier: "com.lipcoordnet.app",
+        // Removed googleServicesFile to avoid parsing error
       },
     },
   };
