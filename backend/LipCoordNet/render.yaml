@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: lipcoordnet
+    env: python
+    plan: free  # Upgrade to starter for production
+    repo: https://github.com/AAMINABIBI/VisioVox-LipReading
+    rootDir: backend/LipCoordNet
+    buildCommand: |
+      apt-get update
+      apt-get install -y imagemagick ffmpeg libblas-dev liblapack-dev
+      pip install -r requirements.txt
+    startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
+    autoDeploy: true
+    disk:
+      name: static
+      mountPath: /app/static
+      sizeGB: 1  # Adjust based on storage needs
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
