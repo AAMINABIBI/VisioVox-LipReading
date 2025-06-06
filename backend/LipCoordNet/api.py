@@ -10,19 +10,31 @@ from gtts import gTTS
 from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, AudioFileClip
 import uuid
 import subprocess
-import boto3  # Optional: for S3 integration
+import cloudinary
+import cloudinary.uploader
 
 # Configure ImageMagick for moviepy
 import moviepy.config as cf
-cf.IMAGEMAGICK_BINARY = "magick"  # Render installs ImageMagick globally
+cf.IMAGEMAGICK_BINARY = "magick"  # Heroku will install ImageMagick
+
+# Configure Cloudinary
+cloudinary.config(
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET")
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
-os.makedirs("static", exist_ok=True)
+os.makedirs("static", exist_ok=True)  # Temporary local storage
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/healthz")
+async def health_check():
+    return {"status": "ok"}
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
@@ -76,19 +88,22 @@ async def predict(file: UploadFile = File(...)):
         audio.close()
         final_video.close()
 
-        # Use Render's external hostname or fallback to localhost for local testing
-        base_url = os.environ.get("RENDER_EXTERNAL_HOSTNAME", "http://localhost:8000")
-        audio_uri = f"{base_url}/static/audio_{unique_id}.mp3"
-        video_uri = f"{base_url}/static/video_{unique_id}.mp4"
-
-        # Optional: Upload to S3 if configured
-        if os.environ.get("AWS_ACCESS_KEY_ID"):
-            s3 = boto3.client('s3')
-            bucket_name = os.environ.get("AWS_S3_BUCKET_NAME", "lipcoordnet-static")
-            s3.upload_file(audio_path, bucket_name, f"audio_{unique_id}.mp3", ExtraArgs={'ACL': 'public-read'})
-            s3.upload_file(output_video_path, bucket_name, f"video_{unique_id}.mp4", ExtraArgs={'ACL': 'public-read'})
-            audio_uri = f"https://{bucket_name}.s3.amazonaws.com/audio_{unique_id}.mp3"
-            video_uri = f"https://{bucket_name}.s3.amazonaws.com/video_{unique_id}.mp4"
+        # Upload to Cloudinary
+        audio_upload = cloudinary.uploader.upload(
+            audio_path,
+            resource_type="raw",
+            public_id=f"audio_{unique_id}",
+            folder="lipcoordnet"
+        )
+        video_upload = cloudinary.uploader.upload(
+            output_video_path,
+            resource_type="video",
+            public_id=f"video_{unique_id}",
+            folder="lipcoordnet"
+        )
+        audio_uri = audio_upload['secure_url']
+        video_uri = video_upload['secure_url']
+        logger.info(f"Uploaded to Cloudinary: {audio_uri}, {video_uri}")
 
         return JSONResponse(content={
             "prediction": prediction,
@@ -99,7 +114,7 @@ async def predict(file: UploadFile = File(...)):
         logger.error(f"Error during prediction: {str(e)}")
         return JSONResponse(content={"error": str(e)}, status_code=500)
     finally:
-        for temp_file in [video_path, video_copy_path]:
+        for temp_file in [video_path, video_copy_path, audio_path, output_video_path]:
             if os.path.exists(temp_file):
                 retries = 5
                 for attempt in range(retries):
