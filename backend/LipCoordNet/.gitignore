@@ -2,3 +2,8 @@ venv
 __pycache__
 samples
 output_videos
+
+*.pyc
+__pycache__/
+static/
+temp_*
