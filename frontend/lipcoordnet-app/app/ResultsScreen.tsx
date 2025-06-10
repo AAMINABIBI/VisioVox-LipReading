@@ -6,19 +6,15 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
-import { Video, ResizeMode } from 'expo-video'; // Updated import from expo-av to expo-video
-
-type RootStackParamList = {
-  Results: { result?: string; outputType?: string; audioUri?: string; videoUri?: string };
-  Upload: undefined;
-};
+import { Video, ResizeMode } from 'expo-av';
+import { RootStackParamList, TabParamList } from './_layout';
 
 type ResultsScreenRouteProp = RouteProp<RootStackParamList, 'Results'>;
 
 export default function ResultsScreen() {
   const { theme, themeStyles } = useTheme();
   const currentTheme = themeStyles[theme] || { backgroundColor: '#F3F4F6', textColor: '#1E3A8A', primaryColor: '#60A5FA' };
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const navigation = useNavigation<NavigationProp<TabParamList>>();
   const route = useRoute<ResultsScreenRouteProp>();
   const { result = '', outputType = 'text', audioUri, videoUri } = route.params || {};
   const [videoError, setVideoError] = useState(false);
@@ -26,7 +22,7 @@ export default function ResultsScreen() {
 
   useEffect(() => {
     if (!result || !outputType) {
-      navigation.navigate('Upload'); // Fixed navigation syntax
+      navigation.navigate('Upload');
     }
   }, [result, outputType, navigation]);
 
@@ -93,7 +89,7 @@ export default function ResultsScreen() {
     <View style={[styles.container, { backgroundColor: currentTheme.backgroundColor }]}>
       <TouchableOpacity
         style={styles.backButton}
-        onPress={() => navigation.navigate('Upload')} // Fixed navigation syntax
+        onPress={() => navigation.navigate('Upload')}
         accessibilityLabel="Go Back to Upload"
         accessibilityRole="button"
       >
@@ -144,7 +140,7 @@ export default function ResultsScreen() {
       )}
       <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.button}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('Upload')} // Fixed navigation syntax
+          onPress={() => navigation.navigate('Upload')}
           accessibilityLabel="Upload Another Video"
           accessibilityRole="button"
         >

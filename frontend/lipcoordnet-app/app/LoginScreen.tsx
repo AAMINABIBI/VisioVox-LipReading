@@ -4,13 +4,9 @@ import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
-import { auth, signInWithEmailAndPassword } from '../firebaseConfig';
-
-type RootStackParamList = {
-  login: undefined;
-  home: undefined;
-  signup: undefined;
-};
+import { auth } from '../firebaseConfig';
+import { FirebaseError } from 'firebase/app';
+import { RootStackParamList } from './_layout';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -35,12 +31,17 @@ export default function LoginScreen() {
 
     setIsLoading(true);
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log('LoginScreen - User logged in:', userCredential.user.uid);
-      navigation.reset({ index: 0, routes: [{ name: 'home' }] }); // Redirect to home after login
-    } catch (error) {
-      console.error('Login Failed:', error.message);
-      alert('Login Failed: ' + error.message);
+      const userCredential = await auth.signInWithEmailAndPassword(email, password);
+      if (userCredential.user) {
+        console.log('LoginScreen - User logged in:', userCredential.user.uid);
+        navigation.reset({ index: 0, routes: [{ name: 'Main' }] });
+      } else {
+        throw new Error('User not found');
+      }
+    } catch (error: unknown) {
+      const firebaseError = error as FirebaseError;
+      console.error('Login Failed:', firebaseError.code, firebaseError.message);
+      alert(`Login Failed: ${firebaseError.message || 'Unknown error'}`);
     } finally {
       setIsLoading(false);
     }

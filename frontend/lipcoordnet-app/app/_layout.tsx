@@ -17,9 +17,9 @@ import LoginScreen from './LoginScreen';
 import SignupScreen from './SignupSCreen';
 import { ThemeProvider } from '../ThemeContext';
 import { auth } from '../firebaseConfig';
-import { View as RNView, Text, TouchableOpacity, Alert } from 'react-native';
+import { Text, TouchableOpacity, Alert } from 'react-native';
 
-type RootStackParamList = {
+export type RootStackParamList = {
   signup: undefined;
   login: undefined;
   Main: undefined;
@@ -27,14 +27,21 @@ type RootStackParamList = {
   Results: { result?: string; outputType?: string; audioUri?: string; videoUri?: string };
 };
 
-type TabParamList = {
+export type TabParamList = {
   Home: undefined;
   Upload: undefined;
   Profile: undefined;
   Settings: undefined;
-  OutputStack: { screen: string; params: { videoUri?: string; prediction?: string; audioUri?: string } };
+  OutputStack: { screen: keyof OutputStackParamList; params?: OutputStackParams };
   Logout: undefined;
 };
+
+type OutputStackParamList = {
+  OutputSelection: { videoUri?: string; prediction?: string; outputType?: string; audioUri?: string };
+  Results: { result?: string; outputType?: string; audioUri?: string; videoUri?: string };
+};
+
+type OutputStackParams = OutputStackParamList[keyof OutputStackParamList];
 
 const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<TabParamList>();
@@ -78,12 +85,12 @@ function OutputStackNavigator() {
   );
 }
 
-function LogoutScreen({ navigation }: { navigation: NavigationProp<TabParamList> }) {
+function LogoutScreen({ navigation }: { navigation: NavigationProp<RootStackParamList> }) {
   useEffect(() => {
     const handleLogout = async () => {
       try {
         await auth.signOut();
-        navigation.reset({ index: 0, routes: [{ name: 'signup' as const }] });
+        navigation.reset({ index: 0, routes: [{ name: 'signup' }] });
       } catch (error) {
         Alert.alert('Logout Failed', 'Please try again.');
       }
@@ -98,8 +105,8 @@ function TabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={({ route }: { route: RouteProp<TabParamList, keyof TabParamList> }) => {
-        const scale = useSharedValue(1); // Define scale inside the callback
-        const opacity = useSharedValue(0.7); // Define opacity inside the callback
+        const scale = useSharedValue(1);
+        const opacity = useSharedValue(0.7);
 
         const animatedStyle = useAnimatedStyle(() => ({
           transform: [{ scale: scale.value }],
@@ -180,48 +187,12 @@ function TabNavigator() {
         };
       }}
     >
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          tabBarLabel: 'Home',
-        }}
-      />
-      <Tab.Screen
-        name="Upload"
-        component={UploadScreen}
-        options={{
-          tabBarLabel: 'Upload',
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          tabBarLabel: 'Profile',
-        }}
-      />
-      <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
-        options={{
-          tabBarLabel: 'Settings',
-        }}
-      />
-      <Tab.Screen
-        name="Logout"
-        component={LogoutScreen}
-        options={{
-          tabBarLabel: 'Logout',
-        }}
-      />
-      <Tab.Screen
-        name="OutputStack"
-        component={OutputStackNavigator}
-        options={{
-          tabBarButton: () => null,
-        }}
-      />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ tabBarLabel: 'Home' }} />
+      <Tab.Screen name="Upload" component={UploadScreen} options={{ tabBarLabel: 'Upload' }} />
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{ tabBarLabel: 'Profile' }} />
+      <Tab.Screen name="Settings" component={SettingsScreen} options={{ tabBarLabel: 'Settings' }} />
+      <Tab.Screen name="Logout" component={LogoutScreen} options={{ tabBarLabel: 'Logout' }} />
+      <Tab.Screen name="OutputStack" component={OutputStackNavigator} options={{ tabBarButton: () => null }} />
     </Tab.Navigator>
   );
 }

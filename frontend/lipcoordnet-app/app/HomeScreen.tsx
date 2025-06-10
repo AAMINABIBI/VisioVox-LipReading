@@ -7,13 +7,16 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import { auth, db } from '../firebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
+import { RootStackParamList, TabParamList } from './_layout';
 
-type TabParamList = {
-  Home: undefined;
-  Upload: undefined;
-  Profile: undefined;
-  Settings: undefined;
-  OutputStack: { screen: string; params: { videoUri?: string; prediction?: string; outputType?: string; audioUri?: string } };
+type OutputStackParams = {
+  screen: 'OutputSelection' | 'Results';
+  params?: {
+    videoUri?: string;
+    prediction?: string;
+    outputType?: string;
+    audioUri?: string;
+  };
 };
 
 export default function HomeScreen() {
@@ -35,7 +38,6 @@ export default function HomeScreen() {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
         console.log('User logged in:', user.uid);
-        // Fetch username from Firestore
         try {
           const userDoc = await getDoc(doc(db, 'users', user.uid));
           if (userDoc.exists()) {
@@ -91,13 +93,13 @@ export default function HomeScreen() {
     transform: [{ translateY: buttonTranslateY.value }],
   }));
 
-  const handleNavigate = (destination: keyof TabParamList | { name: 'OutputStack'; params: { screen: string; params: { videoUri?: string; prediction?: string; outputType?: string; audioUri?: string } } }) => {
+  const handleNavigate = (destination: keyof TabParamList | OutputStackParams) => {
     setIsNavigating(true);
     setTimeout(() => {
       if (typeof destination === 'string') {
         navigation.navigate(destination);
       } else {
-        navigation.navigate(destination);
+        navigation.navigate('OutputStack', destination);
       }
       setIsLoading(true);
       setTimeout(() => setIsLoading(false), 100);
@@ -120,10 +122,10 @@ export default function HomeScreen() {
       </Animated.Text>
       <Animated.View style={[styles.bannerContainer, animatedBannerStyle]}>
         <Image
-          source={require('../assets/images/banner_image.png')}
-          style={styles.banner}
+          source={require('../assets/images/logo.jpg')}
+          style={styles.bannerImage}
           resizeMode="contain"
-          accessibilityLabel="VisioVox Banner"
+          accessibilityLabel="Header Image"
         />
       </Animated.View>
       <Animated.View style={[styles.buttonContainer, animatedButtonStyle]}>
@@ -146,7 +148,7 @@ export default function HomeScreen() {
           <View style={styles.iconButtonWrapper}>
             <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.iconButton}>
               <TouchableOpacity
-                onPress={() => handleNavigate({ name: 'OutputStack', params: { screen: 'Results', params: {} } })}
+                onPress={() => handleNavigate({ screen: 'Results', params: {} })}
                 accessibilityLabel="View your lip-reading results"
                 accessibilityRole="button"
                 disabled={isNavigating}
@@ -230,9 +232,9 @@ const styles = StyleSheet.create({
       },
     }),
   },
-  banner: {
+  bannerImage: {
     width: '100%',
-    height: 300,
+    height: 150,
     borderRadius: 15,
   },
   buttonContainer: {
