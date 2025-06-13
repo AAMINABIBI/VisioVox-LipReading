@@ -2,3 +2,4 @@
 backend/pretrain/LipCoordNet_coords_loss_0.025581153109669685_wer_0.01746208431890914_cer_0.006488426950253695.pt
 backend/pretrain/
 package-lock.json
+.env
