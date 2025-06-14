@@ -122,7 +122,7 @@ export default function HomeScreen() {
       </Animated.Text>
       <Animated.View style={[styles.bannerContainer, animatedBannerStyle]}>
         <Image
-          source={require('../assets/images/logo.jpg')}
+          source={require('../assets/images/banner_image.png')}
           style={styles.bannerImage}
           resizeMode="contain"
           accessibilityLabel="Header Image"
