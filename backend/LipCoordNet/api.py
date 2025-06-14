@@ -1,11 +1,10 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
-from fastapi.staticfiles import StaticFiles
 import shutil
 import os
-import time
 from inference import predict_lip_reading
 import logging
+<<<<<<< HEAD
 from gtts import gTTS
 from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, AudioFileClip
 import uuid
@@ -23,18 +22,23 @@ cloudinary.config(
     api_key=os.environ.get("CLOUDINARY_API_KEY"),
     api_secret=os.environ.get("CLOUDINARY_API_SECRET")
 )
+=======
+>>>>>>> parent of d642d9f (updates commit)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
+<<<<<<< HEAD
 os.makedirs("static", exist_ok=True)  # Temporary local storage
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/healthz")
 async def health_check():
     return {"status": "ok"}
+=======
+>>>>>>> parent of d642d9f (updates commit)
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
@@ -42,6 +46,7 @@ async def predict(file: UploadFile = File(...)):
         logger.error(f"Invalid file type: {file.content_type}")
         return JSONResponse(content={"error": "Only video files are accepted"}, status_code=400)
 
+<<<<<<< HEAD
     unique_id = str(uuid.uuid4())
     video_path = f"temp_{unique_id}_{file.filename}"
     video_copy_path = f"temp_copy_{unique_id}_{file.filename}"
@@ -49,6 +54,13 @@ async def predict(file: UploadFile = File(...)):
         with open(video_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
         file.file.close()
+=======
+    video_path = f"temp_{file.filename}"
+    try:
+        # Save uploaded file
+        with open(video_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+>>>>>>> parent of d642d9f (updates commit)
         logger.info(f"Successfully saved video to {video_path}")
 
         weights_path = "pretrain/LipCoordNet_coords_loss_0.025581153109669685_wer_0.01746208431890914_cer_0.006488426950253695.pt"
@@ -65,6 +77,7 @@ async def predict(file: UploadFile = File(...)):
         )
         logger.info(f"Prediction completed: {prediction}")
 
+<<<<<<< HEAD
         audio_path = f"static/audio_{unique_id}.mp3"
         tts = gTTS(text=prediction, lang='en')
         tts.save(audio_path)
@@ -110,9 +123,21 @@ async def predict(file: UploadFile = File(...)):
             "audioUri": audio_uri,
             "videoUri": video_uri
         })
+=======
+        # Clean up temporary file
+        if os.path.exists(video_path):
+            os.remove(video_path)
+            logger.info(f"Removed temporary file: {video_path}")
+
+        return JSONResponse(content={"prediction": prediction})
+>>>>>>> parent of d642d9f (updates commit)
     except Exception as e:
         logger.error(f"Error during prediction: {str(e)}")
+        if os.path.exists(video_path):
+            os.remove(video_path)
+            logger.info(f"Removed temporary file due to error: {video_path}")
         return JSONResponse(content={"error": str(e)}, status_code=500)
+<<<<<<< HEAD
     finally:
         for temp_file in [video_path, video_copy_path, audio_path, output_video_path]:
             if os.path.exists(temp_file):
@@ -127,6 +152,8 @@ async def predict(file: UploadFile = File(...)):
                         time.sleep(2)
                 else:
                     logger.error(f"Failed to remove temporary file after {retries} attempts: {temp_file}")
+=======
+>>>>>>> parent of d642d9f (updates commit)
 
 if __name__ == "__main__":
     import uvicorn

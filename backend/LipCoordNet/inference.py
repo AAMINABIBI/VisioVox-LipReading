@@ -4,17 +4,10 @@ from model import LipCoordNet
 from dataset import MyDataset
 import torch
 import cv2
-import time
 import face_alignment
 import numpy as np
 import dlib
 import glob
-import subprocess
-import logging
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 def get_position(size, padding=0.25):
     x = [
@@ -69,8 +62,10 @@ def load_video(file, device: str):
         os.makedirs("samples")
     p = os.path.join("samples")
     output = os.path.join("samples", "%04d.jpg")
-    cmd = f"ffmpeg -hide_banner -loglevel error -i {file} -qscale:v 2 -r 25 {output}"
-    subprocess.run(cmd, shell=True, check=True)
+    cmd = "ffmpeg -hide_banner -loglevel error -i {} -qscale:v 2 -r 25 {}".format(
+        file, output
+    )
+    os.system(cmd)
     files = os.listdir(p)
     files = sorted(files, key=lambda x: int(os.path.splitext(x)[0]))
     array = [cv2.imread(os.path.join(p, file)) for file in files]
@@ -157,23 +152,10 @@ def predict_lip_reading(video_path, weights_path, device="cpu", output_path="out
     with torch.no_grad():
         pred = model(video[None, ...].to(device), coords[None, ...].to(device))
         output = ctc_decode(pred[0])
-    
-    # Cleanup samples directory
     if os.path.exists("samples"):
-        retries = 3
-        for attempt in range(retries):
-            try:
-                for file in glob.glob("samples/*.jpg"):
-                    os.remove(file)
-                os.rmdir("samples")
-                logger.info("Cleaned up samples directory")
-                break
-            except (PermissionError, OSError) as e:
-                logger.warning(f"Attempt {attempt + 1}/{retries}: Failed to clean up samples directory. Retrying...")
-                time.sleep(1)
-        else:
-            logger.error("Failed to clean up samples directory after retries")
-    
+        for file in glob.glob("samples/*.jpg"):
+            os.remove(file)
+        os.rmdir("samples")
     return output[-1]
 
 if __name__ == "__main__":
