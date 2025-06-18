@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import 'dotenv/config'; // Load environment variables from .env
 
 export default ({ config }) => {
@@ -8,72 +7,52 @@ export default ({ config }) => {
       ...config.expo,
       name: "LipCoordNet-app",
       slug: "lipcoordnet-app",
-      scheme: "lipcoordnetapp",
+      scheme: "lipcoordnetapp", // Recommended for deep linking
       version: "1.0.0",
+      orientation: "portrait", // From Snippet 2
+      icon: "./assets/images/icon.png", // From Snippet 2
+      userInterfaceStyle: "automatic", // From Snippet 2
+      splash: {
+        image: "./assets/images/splash-icon.png",
+        resizeMode: "contain",
+        backgroundColor: "#ffffff",
+      }, // From Snippet 2
+      assetBundlePatterns: ["**/*"], // From Snippet 2
+      plugins: ["expo-router", "expo-video"], // From Snippet 2
       extra: {
         firebase: {
-          apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY || "default-api-key",
-          authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN || "default-auth-domain",
-          projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID || "default-project-id",
-          storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET || "default-storage-bucket",
-          messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "default-sender-id",
-          appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID || "default-app-id",
-          measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID || "default-measurement-id",
+          // Use environment variables for sensitive Firebase credentials
+          apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY || "your-firebase-api-key",
+          authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN || "your-firebase-auth-domain",
+          projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID || "your-firebase-project-id",
+          storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET || "your-firebase-storage-bucket",
+          messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "your-firebase-messaging-sender-id",
+          appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID || "your-firebase-app-id",
+          measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID || "your-firebase-measurement-id",
         },
         eas: {
+          // EAS Project ID, replace with your actual ID if different
           projectId: process.env.EXPO_PUBLIC_EAS_PROJECT_ID || "cf89d750-7ef8-4861-93c0-278edcd416ae",
         },
       },
       android: {
-        package: "com.lipcoordnet.app",
-        versionCode: 1,
-        googleServicesFile: "./google-services.json",
+        package: "com.lipcoordnet.app", // Ensure this is the correct package name for your app
+        versionCode: 1, // Increment this for new Android releases
+        googleServicesFile: "./google-services.json", // Path to your google-services.json file
+        adaptiveIcon: {
+          foregroundImage: "./assets/images/adaptive-icon.png",
+          backgroundColor: "#ffffff",
+        },
       },
       ios: {
-        bundleIdentifier: "com.lipcoordnet.app",
-        // Removed googleServicesFile to avoid parsing error
-=======
-
-
-export default {
-  expo: {
-    name: "lipcoordnet-app",
-    slug: "lipcoordnet-app",
-    version: "1.0.0",
-    orientation: "portrait",
-    icon: "./assets/images/icon.png",
-    userInterfaceStyle: "automatic",
-    splash: {
-      image: "./assets/images/splash-icon.png",
-      resizeMode: "contain",
-      backgroundColor: "#ffffff",
-    },
-    assetBundlePatterns: ["**/*"],
-    ios: {
-      supportsTablet: true,
-    },
-    android: {
-      adaptiveIcon: {
-        foregroundImage: "./assets/images/adaptive-icon.png",
-        backgroundColor: "#ffffff",
+        bundleIdentifier: "com.lipcoordnet.app", // Ensure this is the correct bundle identifier
+        supportsTablet: true,
+        // For iOS Google Services, you typically link GoogleService-Info.plist through Xcode
+        // or a specific plugin, not directly via googleServicesFile here.
       },
-      package: "com.yourcompany.lipcoordnetapp",
-    },
-    web: {
-      favicon: "./assets/favicon.png",
-    },
-    plugins: ["expo-router", "expo-video"],
-    extra: {
-      firebase: {
-        apiKey: "AIzaSyDpm_NtQdjGoXDEMkjj6xZVh2-TRefVqZk",
-        authDomain: "visiovox-90dfb.firebaseapp.com",
-        projectId: "visiovox-90dfb",
-        storageBucket: "visiovox-90dfb.firebasestorage.app",
-        messagingSenderId: "619681158693",
-        appId: "1:619681158693:web:2886a82db1d2e80583d1cc",
-        measurementId: "G-DW0DGYWDGE",
->>>>>>> parent of d642d9f (updates commit)
+      web: {
+        favicon: "./assets/favicon.png",
       },
     },
-  },
+  };
 };

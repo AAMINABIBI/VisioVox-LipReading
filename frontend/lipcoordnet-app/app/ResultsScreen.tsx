@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform, Alert, ActivityIndicator } from 'react-native';
 import { useNavigation, useRoute, NavigationProp, RouteProp } from '@react-navigation/native';
@@ -14,7 +13,7 @@ type ResultsScreenRouteProp = RouteProp<RootStackParamList, 'Results'>;
 
 export default function ResultsScreen() {
   const { theme, themeStyles } = useTheme();
-  const currentTheme = themeStyles[theme] || { backgroundColor: '#F3F4F6', textColor: '#1E3A8A', primaryColor: '#60A5FA' };
+  const currentTheme = themeStyles[theme] || { backgroundColor: '#F3F4F6', textColor: '#1E3A8A', primaryColor: '#60A5FA', cardBackground: '#FFFFFF' };
   const navigation = useNavigation<NavigationProp<TabParamList>>();
   const route = useRoute<ResultsScreenRouteProp>();
   const { result = '', outputType = 'text', audioUri, videoUri } = route.params || {};
@@ -97,7 +96,7 @@ export default function ResultsScreen() {
         <Icon name="arrow-back" size={24} color={currentTheme.textColor} />
       </TouchableOpacity>
       <Text style={[styles.header, { color: currentTheme.textColor }]}>Results</Text>
-      <View style={[styles.resultCard, { backgroundColor: '#FFFFFF' }]}>
+      <View style={[styles.resultCard, { backgroundColor: currentTheme.cardBackground }]}>
         {outputType === 'text' && (
           <Text style={[styles.resultText, { color: currentTheme.textColor }]}>TEXT: {result}</Text>
         )}
@@ -126,70 +125,16 @@ export default function ResultsScreen() {
         ) : null}
       </View>
       {(outputType === 'audio' || outputType === 'video') && (audioUri || videoUri) && (
-        <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.button}>
-=======
-import React, { useEffect } from 'react';
-  import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
-  import { useNavigation, useRoute, NavigationProp, RouteProp } from '@react-navigation/native';
-  import { useTheme } from '../ThemeContext';
-  import { LinearGradient } from 'expo-linear-gradient';
-  import Icon from 'react-native-vector-icons/MaterialIcons';
-
-  type RootStackParamList = {
-    Results: { result?: string; outputType?: string };
-    Upload: undefined;
-  };
-
-  type ResultsScreenRouteProp = RouteProp<RootStackParamList, 'Results'>;
-
-  export default function ResultsScreen() {
-    const { theme, themeStyles } = useTheme();
-    const currentTheme = themeStyles[theme];
-    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-    const route = useRoute<ResultsScreenRouteProp>();
-    const { result = '', outputType = 'text' } = route.params || {};
-
-    useEffect(() => {
-      console.log('Results Raw Params:', route.params);
-      console.log('Results Processed Params:', { result, outputType });
-      if (!result || !outputType) {
-        console.log('No result or outputType, redirecting to Upload');
-        navigation.navigate('Upload');
-      }
-    }, [result, outputType, navigation]);
-
-    if (!result || !outputType) {
-      return null;
-    }
-
-    return (
-      <View style={[styles.container, { backgroundColor: currentTheme.backgroundColor }]}>
-        <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => navigation.navigate('Upload')}
-          accessibilityLabel="Go Back"
-          accessibilityRole="button"
-        >
-          <Icon name="arrow-back" size={24} color={currentTheme.textColor} />
-        </TouchableOpacity>
-        <Text style={[styles.header, { color: currentTheme.textColor }]}>Results</Text>
-        <View style={[styles.resultCard, { backgroundColor: currentTheme.cardBackground || currentTheme.backgroundColor }]}>
-          <Text style={[styles.resultText, { color: currentTheme.textColor }]}>
-            {outputType.toUpperCase()}: {result}
-          </Text>
-        </View>
         <LinearGradient
           colors={theme === 'dark' ? ['#000080', '#1E90FF'] : ['#1E90FF', '#6200ea']}
           style={styles.button}
         >
->>>>>>> parent of d642d9f (updates commit)
           <TouchableOpacity
-            onPress={() => navigation.navigate('Upload')}
-            accessibilityLabel="Upload Another Video"
+            onPress={handleDownloadShare}
+            accessibilityLabel={outputType === 'audio' ? 'Download or Share Audio' : 'Download or Share Video'}
             accessibilityRole="button"
             disabled={isDownloading}
           >
-<<<<<<< HEAD
             <Text style={styles.buttonText}>
               {isDownloading ? 'Processing...' : outputType === 'audio' ? 'Download/Share Audio' : 'Download/Share Video'}
             </Text>
@@ -224,31 +169,31 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   header: {
-    fontSize: 20,
-    fontWeight: '600',
-    marginBottom: 15,
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
   },
   resultCard: {
-    padding: 15,
-    borderRadius: 10,
-    width: '90%',
+    padding: 20,
+    borderRadius: 15,
+    width: '100%',
     alignItems: 'center',
-    marginBottom: 15,
+    marginBottom: 20,
     ...Platform.select({
       ios: {
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
       },
       android: {
-        elevation: 4,
+        elevation: 5,
       },
     }),
   },
   resultText: {
-    fontSize: 16,
-    fontWeight: '500',
+    fontSize: 18,
+    fontWeight: '600',
     textAlign: 'center',
   },
   video: {
@@ -258,105 +203,31 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   button: {
-    borderRadius: 10,
     paddingVertical: 12,
     paddingHorizontal: 40,
-    marginVertical: 8,
+    borderRadius: 25,
+    marginVertical: 10,
+    width: '100%',
     alignItems: 'center',
     ...Platform.select({
       ios: {
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
       },
       android: {
-        elevation: 4,
+        elevation: 5,
       },
     }),
   },
   buttonText: {
-    color: '#F9FAFB',
+    color: '#FFFFFF',
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '600',
+    textAlign: 'center',
   },
   loader: {
     marginTop: 15,
   },
 });
-=======
-            <Text style={styles.buttonText}>Upload Another Video</Text>
-          </TouchableOpacity>
-        </LinearGradient>
-      </View>
-    );
-  }
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 20,
-    },
-    backButton: {
-      position: 'absolute',
-      top: 40,
-      left: 20,
-      zIndex: 10,
-    },
-    header: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: 20,
-    },
-    resultCard: {
-      padding: 20,
-      borderRadius: 15,
-      width: '100%',
-      alignItems: 'center',
-      marginBottom: 20,
-      ...Platform.select({
-        ios: {
-          shadowColor: '#000',
-          shadowOffset: { width: 0, height: 4 },
-          shadowOpacity: 0.3,
-          shadowRadius: 5,
-        },
-        android: {
-          elevation: 5,
-        },
-      }),
-    },
-    resultText: {
-      fontSize: 18,
-      fontWeight: '600',
-      textAlign: 'center',
-    },
-    button: {
-      paddingVertical: 12,
-      paddingHorizontal: 40,
-      borderRadius: 25,
-      marginVertical: 10,
-      width: '100%',
-      alignItems: 'center',
-      ...Platform.select({
-        ios: {
-          shadowColor: '#000',
-          shadowOffset: { width: 0, height: 4 },
-          shadowOpacity: 0.3,
-          shadowRadius: 5,
-        },
-        android: {
-          elevation: 5,
-        },
-      }),
-    },
-    buttonText: {
-      color: '#FFFFFF',
-      fontSize: 16,
-      fontWeight: '600',
-      textAlign: 'center',
-    },
-  });
->>>>>>> parent of d642d9f (updates commit)

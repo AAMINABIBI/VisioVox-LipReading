@@ -4,41 +4,29 @@ import shutil
 import os
 from inference import predict_lip_reading
 import logging
-<<<<<<< HEAD
 from gtts import gTTS
+
+import moviepy.config as cf
+cf.IMAGEMAGICK_BINARY = r"C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe"  # Adjust path as needed
+
 from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, AudioFileClip
 import uuid
-import subprocess
-import cloudinary
-import cloudinary.uploader
+import time
 
 # Configure ImageMagick for moviepy
 import moviepy.config as cf
-cf.IMAGEMAGICK_BINARY = "magick"  # Heroku will install ImageMagick
-
-# Configure Cloudinary
-cloudinary.config(
-    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
-    api_key=os.environ.get("CLOUDINARY_API_KEY"),
-    api_secret=os.environ.get("CLOUDINARY_API_SECRET")
-)
-=======
->>>>>>> parent of d642d9f (updates commit)
+cf.IMAGEMAGICK_BINARY = "magick"  # Assumes ImageMagick is installed locally
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
-<<<<<<< HEAD
 os.makedirs("static", exist_ok=True)  # Temporary local storage
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/healthz")
 async def health_check():
     return {"status": "ok"}
-=======
->>>>>>> parent of d642d9f (updates commit)
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
@@ -46,21 +34,14 @@ async def predict(file: UploadFile = File(...)):
         logger.error(f"Invalid file type: {file.content_type}")
         return JSONResponse(content={"error": "Only video files are accepted"}, status_code=400)
 
-<<<<<<< HEAD
     unique_id = str(uuid.uuid4())
-    video_path = f"temp_{unique_id}_{file.filename}"
-    video_copy_path = f"temp_copy_{unique_id}_{file.filename}"
-    try:
-        with open(video_path, "wb") as buffer:
-            shutil.copyfileobj(file.file, buffer)
-        file.file.close()
-=======
-    video_path = f"temp_{file.filename}"
+    video_path = f"static/temp_{unique_id}_{file.filename}"
+    video_copy_path = f"static/temp_copy_{unique_id}_{file.filename}"
     try:
         # Save uploaded file
         with open(video_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
->>>>>>> parent of d642d9f (updates commit)
+        file.file.close()
         logger.info(f"Successfully saved video to {video_path}")
 
         weights_path = "pretrain/LipCoordNet_coords_loss_0.025581153109669685_wer_0.01746208431890914_cer_0.006488426950253695.pt"
@@ -77,7 +58,6 @@ async def predict(file: UploadFile = File(...)):
         )
         logger.info(f"Prediction completed: {prediction}")
 
-<<<<<<< HEAD
         audio_path = f"static/audio_{unique_id}.mp3"
         tts = gTTS(text=prediction, lang='en')
         tts.save(audio_path)
@@ -101,43 +81,21 @@ async def predict(file: UploadFile = File(...)):
         audio.close()
         final_video.close()
 
-        # Upload to Cloudinary
-        audio_upload = cloudinary.uploader.upload(
-            audio_path,
-            resource_type="raw",
-            public_id=f"audio_{unique_id}",
-            folder="lipcoordnet"
-        )
-        video_upload = cloudinary.uploader.upload(
-            output_video_path,
-            resource_type="video",
-            public_id=f"video_{unique_id}",
-            folder="lipcoordnet"
-        )
-        audio_uri = audio_upload['secure_url']
-        video_uri = video_upload['secure_url']
-        logger.info(f"Uploaded to Cloudinary: {audio_uri}, {video_uri}")
+        # Return local file URIs
+        audio_uri = f"file://{os.path.abspath(audio_path)}"
+        video_uri = f"file://{os.path.abspath(output_video_path)}"
 
         return JSONResponse(content={
             "prediction": prediction,
             "audioUri": audio_uri,
             "videoUri": video_uri
         })
-=======
-        # Clean up temporary file
-        if os.path.exists(video_path):
-            os.remove(video_path)
-            logger.info(f"Removed temporary file: {video_path}")
-
-        return JSONResponse(content={"prediction": prediction})
->>>>>>> parent of d642d9f (updates commit)
     except Exception as e:
         logger.error(f"Error during prediction: {str(e)}")
         if os.path.exists(video_path):
             os.remove(video_path)
             logger.info(f"Removed temporary file due to error: {video_path}")
         return JSONResponse(content={"error": str(e)}, status_code=500)
-<<<<<<< HEAD
     finally:
         for temp_file in [video_path, video_copy_path, audio_path, output_video_path]:
             if os.path.exists(temp_file):
@@ -152,10 +110,8 @@ async def predict(file: UploadFile = File(...)):
                         time.sleep(2)
                 else:
                     logger.error(f"Failed to remove temporary file after {retries} attempts: {temp_file}")
-=======
->>>>>>> parent of d642d9f (updates commit)
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.environ.get("PORT", 8000))
+    port = int(os.environ.get("PORT", 8080))  # Matches the port in UploadScreen
     uvicorn.run(app, host="0.0.0.0", port=port)
