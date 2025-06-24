@@ -5,17 +5,14 @@ import os
 from inference import predict_lip_reading
 import logging
 from gtts import gTTS
-
-import moviepy.config as cf
-cf.IMAGEMAGICK_BINARY = r"C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe"  # Adjust path as needed
-
-from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, AudioFileClip
-import uuid
-import time
+import uuid  # Added to fix "uuid is not defined"
 
 # Configure ImageMagick for moviepy
 import moviepy.config as cf
-cf.IMAGEMAGICK_BINARY = "magick"  # Assumes ImageMagick is installed locally
+cf.IMAGEMAGICK_BINARY = r"C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe"  # Use explicit path
+
+from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, AudioFileClip
+import time
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -34,7 +31,7 @@ async def predict(file: UploadFile = File(...)):
         logger.error(f"Invalid file type: {file.content_type}")
         return JSONResponse(content={"error": "Only video files are accepted"}, status_code=400)
 
-    unique_id = str(uuid.uuid4())
+    unique_id = str(uuid.uuid4())  # Now works with import
     video_path = f"static/temp_{unique_id}_{file.filename}"
     video_copy_path = f"static/temp_copy_{unique_id}_{file.filename}"
     try:
