@@ -1,287 +1,220 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, Platform, ActivityIndicator } from 'react-native';
-import { useNavigation, NavigationProp } from '@react-navigation/native';
-import { useTheme } from '../ThemeContext';
-import { LinearGradient } from 'expo-linear-gradient';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
-import { auth, db } from '../firebaseConfig';
-import { doc, getDoc } from 'firebase/firestore';
-import { RootStackParamList, TabParamList } from './_layout';
+"use client"
 
-type OutputStackParams = {
-  screen: 'OutputSelection' | 'Results';
-  params?: {
-    videoUri?: string;
-    prediction?: string;
-    outputType?: string;
-    audioUri?: string;
-  };
-};
+import { useState, useEffect } from "react"
+import { View, Text, StyleSheet, TouchableOpacity, Platform, ActivityIndicator } from "react-native"
+import { useNavigation, type NavigationProp } from "@react-navigation/native"
+import { useAuth } from "../contexts/AuthContext"
+import { useTheme } from "../contexts/ThemeContext"
+import Animated, { useSharedValue, useAnimatedStyle, withTiming, Easing } from "react-native-reanimated"
+import Icon from "react-native-vector-icons/FontAwesome"
+import { LinearGradient } from "expo-linear-gradient"
 
-export default function HomeScreen() {
-  const { theme, themeStyles } = useTheme();
-  const currentTheme = themeStyles[theme] || { backgroundColor: '#F3F4F6', textColor: '#1E3A8A', primaryColor: '#60A5FA' };
-  const [isNavigating, setIsNavigating] = useState(false);
-  const [userName, setUserName] = useState('User');
-  const [isLoading, setIsLoading] = useState(true);
-  const navigation = useNavigation<NavigationProp<TabParamList>>();
+type RootStackParamList = {
+  Home: undefined
+  Upload: undefined
+  LipReading: undefined
+  SignLanguage: undefined
+}
 
-  const welcomeOpacity = useSharedValue(0);
-  const welcomeTranslateY = useSharedValue(20);
-  const bannerOpacity = useSharedValue(0);
-  const bannerTranslateY = useSharedValue(20);
-  const buttonOpacity = useSharedValue(0);
-  const buttonTranslateY = useSharedValue(50);
+const HomeScreen = () => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>()
+  const { userName } = useAuth()
+  const { currentTheme } = useTheme()
+  const [loading, setLoading] = useState(false)
+
+  const welcomeOpacity = useSharedValue(0)
+  const buttonOpacity = useSharedValue(0)
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        console.log('User logged in:', user.uid);
-        try {
-          const userDoc = await getDoc(doc(db, 'users', user.uid));
-          if (userDoc.exists()) {
-            const data = userDoc.data();
-            const displayName = data.displayName || user.email?.split('@')[0] || 'User';
-            console.log('Fetched userName from Firestore:', displayName);
-            setUserName(displayName);
-          } else {
-            console.log('No user document in Firestore, using default');
-            setUserName(user.email?.split('@')[0] || 'User');
-          }
-        } catch (error) {
-          console.error('Error fetching user data from Firestore:', error);
-          setUserName(user.email?.split('@')[0] || 'User');
-        }
-      } else {
-        console.log('No user logged in');
-        setUserName('User');
-      }
-      setIsLoading(false);
-    });
+    welcomeOpacity.value = withTiming(1, { duration: 1000, easing: Easing.ease })
+    buttonOpacity.value = withTiming(1, { duration: 1500, easing: Easing.ease })
+  }, [])
 
-    return () => unsubscribe();
-  }, []);
-
-  useEffect(() => {
-    if (!isLoading) {
-      welcomeOpacity.value = withTiming(1, { duration: 800 });
-      welcomeTranslateY.value = withTiming(0, { duration: 800 });
-      setTimeout(() => {
-        bannerOpacity.value = withTiming(1, { duration: 800 });
-        bannerTranslateY.value = withTiming(0, { duration: 800 });
-      }, 200);
-      setTimeout(() => {
-        buttonOpacity.value = withTiming(1, { duration: 800 });
-        buttonTranslateY.value = withTiming(0, { duration: 800 });
-      }, 400);
+  const animatedWelcomeStyle = useAnimatedStyle(() => {
+    return {
+      opacity: welcomeOpacity.value,
+      transform: [
+        {
+          translateY: welcomeOpacity.value * 20,
+        },
+      ],
     }
-  }, [isLoading]);
+  })
 
-  const animatedWelcomeStyle = useAnimatedStyle(() => ({
-    opacity: welcomeOpacity.value,
-    transform: [{ translateY: welcomeTranslateY.value }],
-  }));
+  const animatedButtonStyle = useAnimatedStyle(() => {
+    return {
+      opacity: buttonOpacity.value,
+    }
+  })
 
-  const animatedBannerStyle = useAnimatedStyle(() => ({
-    opacity: bannerOpacity.value,
-    transform: [{ translateY: bannerTranslateY.value }],
-  }));
-
-  const animatedButtonStyle = useAnimatedStyle(() => ({
-    opacity: buttonOpacity.value,
-    transform: [{ translateY: buttonTranslateY.value }],
-  }));
-
-  const handleNavigate = (destination: keyof TabParamList | OutputStackParams) => {
-    setIsNavigating(true);
+  const handleLipReading = () => {
+    setLoading(true)
     setTimeout(() => {
-      if (typeof destination === 'string') {
-        navigation.navigate(destination);
-      } else {
-        navigation.navigate('OutputStack', destination);
-      }
-      setIsLoading(true);
-      setTimeout(() => setIsLoading(false), 100);
-      setIsNavigating(false);
-    }, 500);
-  };
+      setLoading(false)
+      navigation.navigate("Upload")
+    }, 1500)
+  }
 
-  if (isLoading) {
-    return (
-      <View style={[styles.container, { backgroundColor: currentTheme.backgroundColor, justifyContent: 'center' }]}>
-        <ActivityIndicator size="large" color={currentTheme.primaryColor} />
-      </View>
-    );
+  const handleSignLanguage = () => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      // Navigate to sign language screen when available
+      console.log("Sign Language feature coming soon!")
+    }, 1500)
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: currentTheme.backgroundColor }]}>
+    <View style={[styles.container, { backgroundColor: currentTheme.background }]}>
       <Animated.Text style={[styles.greeting, { color: currentTheme.textColor }, animatedWelcomeStyle]}>
         Welcome, {userName}!
       </Animated.Text>
-      <Animated.View style={[styles.bannerContainer, animatedBannerStyle]}>
-        <Image
-          source={require('../assets/images/banner_image.png')}
-          style={styles.bannerImage}
-          resizeMode="contain"
-          accessibilityLabel="Header Image"
-        />
-      </Animated.View>
+      <Animated.Text style={[styles.subtitle, { color: currentTheme.textColor }, animatedWelcomeStyle]}>
+        Ready to analyze some lip reading?
+      </Animated.Text>
+
+      <View style={styles.bannerContainer}>
+        <LinearGradient colors={["#3B82F6", "#8B5CF6"]} style={styles.bannerGradient}>
+          <Icon name="video-camera" size={48} color="#FFFFFF" />
+          <Text style={styles.bannerText}>AI-Powered Lip Reading</Text>
+        </LinearGradient>
+      </View>
+
       <Animated.View style={[styles.buttonContainer, animatedButtonStyle]}>
         <View style={styles.buttonRow}>
-          <View style={styles.iconButtonWrapper}>
-            <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.iconButton}>
-              <TouchableOpacity
-                onPress={() => handleNavigate('Upload')}
-                accessibilityLabel="Upload a new video"
-                accessibilityRole="button"
-                disabled={isNavigating}
-              >
-                <Icon name="upload" size={30} color="#F9FAFB" />
-              </TouchableOpacity>
+          <TouchableOpacity style={styles.iconButtonWrapper} onPress={handleLipReading} disabled={loading}>
+            <LinearGradient colors={["#3B82F6", "#1D4ED8"]} style={styles.iconButton}>
+              <Icon name="microphone" size={32} color="#FFFFFF" />
             </LinearGradient>
-            <View style={[styles.buttonLabelContainer, { backgroundColor: '#E5E7EB' }]}>
-              <Text style={[styles.buttonLabel, { color: '#1E3A8A' }]}>Upload Video</Text>
+            <View style={[styles.buttonLabelContainer, { backgroundColor: currentTheme.secondary }]}>
+              <Text style={[styles.buttonLabel, { color: currentTheme.textOnSecondary }]}>Lip Reading</Text>
             </View>
-          </View>
-          <View style={styles.iconButtonWrapper}>
-            <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.iconButton}>
-              <TouchableOpacity
-                onPress={() => handleNavigate({ screen: 'Results', params: {} })}
-                accessibilityLabel="View your lip-reading results"
-                accessibilityRole="button"
-                disabled={isNavigating}
-              >
-                <Icon name="visibility" size={30} color="#F9FAFB" />
-              </TouchableOpacity>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconButtonWrapper} onPress={handleSignLanguage} disabled={loading}>
+            <LinearGradient colors={["#10B981", "#059669"]} style={styles.iconButton}>
+              <Icon name="hand-paper-o" size={32} color="#FFFFFF" />
             </LinearGradient>
-            <View style={[styles.buttonLabelContainer, { backgroundColor: '#E5E7EB' }]}>
-              <Text style={[styles.buttonLabel, { color: '#1E3A8A' }]}>View Results</Text>
+            <View style={[styles.buttonLabelContainer, { backgroundColor: currentTheme.secondary }]}>
+              <Text style={[styles.buttonLabel, { color: currentTheme.textOnSecondary }]}>Sign Language</Text>
             </View>
-          </View>
-        </View>
-        <View style={styles.buttonRow}>
-          <View style={styles.iconButtonWrapper}>
-            <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.iconButton}>
-              <TouchableOpacity
-                onPress={() => handleNavigate('Profile')}
-                accessibilityLabel="Go to your profile"
-                accessibilityRole="button"
-                disabled={isNavigating}
-              >
-                <Icon name="person" size={30} color="#F9FAFB" />
-              </TouchableOpacity>
-            </LinearGradient>
-            <View style={[styles.buttonLabelContainer, { backgroundColor: '#E5E7EB' }]}>
-              <Text style={[styles.buttonLabel, { color: '#1E3A8A' }]}>Profile</Text>
-            </View>
-          </View>
-          <View style={styles.iconButtonWrapper}>
-            <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.iconButton}>
-              <TouchableOpacity
-                onPress={() => handleNavigate('Settings')}
-                accessibilityLabel="Go to settings"
-                accessibilityRole="button"
-                disabled={isNavigating}
-              >
-                <Icon name="settings" size={30} color="#F9FAFB" />
-              </TouchableOpacity>
-            </LinearGradient>
-            <View style={[styles.buttonLabelContainer, { backgroundColor: '#E5E7EB' }]}>
-              <Text style={[styles.buttonLabel, { color: '#1E3A8A' }]}>Settings</Text>
-            </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </Animated.View>
-      {isNavigating && (
-        <ActivityIndicator size="large" color={currentTheme.primaryColor} style={styles.loader} />
-      )}
+
+      {loading && <ActivityIndicator size="large" color={currentTheme.primaryColor} style={styles.loader} />}
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    paddingTop: 40,
+    paddingTop: 60,
     paddingHorizontal: 20,
     paddingBottom: 100,
   },
   greeting: {
-    fontSize: 28,
-    fontWeight: '700',
-    marginBottom: 20,
-    textAlign: 'center',
+    fontSize: 32,
+    fontWeight: "800",
+    marginBottom: 8,
+    textAlign: "center",
+  },
+  subtitle: {
+    fontSize: 16,
+    opacity: 0.7,
+    textAlign: "center",
+    marginBottom: 32,
   },
   bannerContainer: {
-    width: '100%',
-    marginBottom: 30,
-    borderRadius: 15,
-    overflow: 'hidden',
+    width: "100%",
+    marginBottom: 40,
+    borderRadius: 20,
+    overflow: "hidden",
     ...Platform.select({
       ios: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 8 },
+        shadowOpacity: 0.2,
+        shadowRadius: 16,
       },
       android: {
-        elevation: 4,
+        elevation: 12,
       },
     }),
   },
-  bannerImage: {
-    width: '100%',
-    height: 150,
-    borderRadius: 15,
+  bannerGradient: {
+    width: "100%",
+    height: 180,
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 16,
+  },
+  bannerText: {
+    color: "#FFFFFF",
+    fontSize: 24,
+    fontWeight: "700",
+    textAlign: "center",
   },
   buttonContainer: {
-    width: '100%',
+    width: "100%",
   },
   buttonRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 24,
   },
   iconButtonWrapper: {
-    alignItems: 'center',
-    width: '48%',
+    alignItems: "center",
+    width: "48%",
   },
   iconButton: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    justifyContent: "center",
+    alignItems: "center",
     ...Platform.select({
       ios: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 6 },
+        shadowOpacity: 0.3,
+        shadowRadius: 12,
       },
       android: {
-        elevation: 4,
+        elevation: 8,
       },
     }),
   },
   buttonLabelContainer: {
-    marginTop: 8,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderRadius: 10,
+    marginTop: 12,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    ...Platform.select({
+      ios: {
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+      },
+      android: {
+        elevation: 2,
+      },
+    }),
   },
   buttonLabel: {
     fontSize: 14,
-    fontWeight: '500',
-    textAlign: 'center',
+    fontWeight: "600",
+    textAlign: "center",
   },
   loader: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
     transform: [{ translateX: -20 }, { translateY: -20 }],
   },
-});
+})
+
+export default HomeScreen

@@ -1,180 +1,188 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Platform, ActivityIndicator } from 'react-native';
-import { useNavigation, NavigationProp } from '@react-navigation/native';
-import { LinearGradient } from 'expo-linear-gradient';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
-import { auth } from '../firebaseConfig';
-import { FirebaseError } from 'firebase/app';
-import { RootStackParamList } from './_layout';
+"use client"
 
-export default function LoginScreen() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-  const opacity = useSharedValue(0);
+import { useState } from "react"
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Platform, Alert } from "react-native"
+import { LinearGradient } from "expo-linear-gradient"
+import Icon from "react-native-vector-icons/MaterialIcons"
+import { useAuth } from "../contexts/AuthContext"
+import { useTheme } from "../contexts/ThemeContext"
 
-  useEffect(() => {
-    opacity.value = withTiming(1, { duration: 600 });
-  }, []);
-
-  const animatedStyle = useAnimatedStyle(() => ({
-    opacity: opacity.value,
-  }));
+const LoginScreen = () => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [loading, setLoading] = useState(false)
+  const { login } = useAuth()
+  const { currentTheme } = useTheme()
 
   const handleLogin = async () => {
     if (!email || !password) {
-      alert('Please fill in all fields.');
-      return;
+      Alert.alert("Error", "Please fill in all fields")
+      return
     }
 
-    setIsLoading(true);
+    setLoading(true)
     try {
-      const userCredential = await auth.signInWithEmailAndPassword(email, password);
-      if (userCredential.user) {
-        console.log('LoginScreen - User logged in:', userCredential.user.uid);
-        navigation.reset({ index: 0, routes: [{ name: 'Main' }] });
-      } else {
-        throw new Error('User not found');
-      }
-    } catch (error: unknown) {
-      const firebaseError = error as FirebaseError;
-      console.error('Login Failed:', firebaseError.code, firebaseError.message);
-      alert(`Login Failed: ${firebaseError.message || 'Unknown error'}`);
+      await login(email, password)
+    } catch (error: any) {
+      Alert.alert("Login Failed", error.message || "An error occurred during login")
     } finally {
-      setIsLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={require('../assets/images/logo.jpg')}
-        style={styles.logo}
-        resizeMode="contain"
-        accessibilityLabel="VisioVox Logo"
-      />
-      <Animated.View style={[styles.formContainer, animatedStyle]}>
-        <Text style={styles.title}>Log In</Text>
-        <View style={styles.inputContainer}>
-          <Icon name="email" size={20} color="#60A5FA" style={styles.icon} />
+    <View style={[styles.container, { backgroundColor: currentTheme.backgroundColor }]}>
+      <LinearGradient colors={["#3B82F6", "#8B5CF6"]} style={styles.logoContainer}>
+        <Icon name="video-library" size={48} color="#FFFFFF" />
+      </LinearGradient>
+
+      <View style={[styles.formContainer, { backgroundColor: currentTheme.cardBackground }]}>
+        <Text style={[styles.title, { color: currentTheme.textColor }]}>Welcome Back</Text>
+
+        <View
+          style={[
+            styles.inputContainer,
+            { backgroundColor: currentTheme.backgroundColor, borderColor: currentTheme.primaryColor },
+          ]}
+        >
+          <Icon name="email" size={24} color={currentTheme.primaryColor} style={styles.icon} />
           <TextInput
-            style={styles.input}
+            style={[styles.input, { color: currentTheme.textColor }]}
             placeholder="Email"
-            placeholderTextColor="#9CA3AF"
+            placeholderTextColor={currentTheme.textColor + "80"}
+            keyboardType="email-address"
             value={email}
             onChangeText={setEmail}
-            keyboardType="email-address"
             autoCapitalize="none"
-            editable={!isLoading}
           />
         </View>
-        <View style={styles.inputContainer}>
-          <Icon name="lock" size={20} color="#60A5FA" style={styles.icon} />
+
+        <View
+          style={[
+            styles.inputContainer,
+            { backgroundColor: currentTheme.backgroundColor, borderColor: currentTheme.primaryColor },
+          ]}
+        >
+          <Icon name="lock" size={24} color={currentTheme.primaryColor} style={styles.icon} />
           <TextInput
-            style={styles.input}
+            style={[styles.input, { color: currentTheme.textColor }]}
             placeholder="Password"
-            placeholderTextColor="#9CA3AF"
+            placeholderTextColor={currentTheme.textColor + "80"}
+            secureTextEntry
             value={password}
             onChangeText={setPassword}
-            secureTextEntry
-            editable={!isLoading}
           />
         </View>
-        <LinearGradient colors={['#1E3A8A', '#60A5FA']} style={styles.button}>
-          <TouchableOpacity
-            onPress={handleLogin}
-            disabled={isLoading}
-            accessibilityLabel="Log In"
-            accessibilityRole="button"
-          >
-            <Text style={styles.buttonText}>
-              {isLoading ? <ActivityIndicator color="#F9FAFB" /> : 'Log In'}
-            </Text>
+
+        <LinearGradient colors={["#3B82F6", "#1D4ED8"]} style={styles.button}>
+          <TouchableOpacity onPress={handleLogin} disabled={loading} style={styles.buttonContent}>
+            <Text style={styles.buttonText}>{loading ? "Signing In..." : "Sign In"}</Text>
           </TouchableOpacity>
         </LinearGradient>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('signup')}
-          disabled={isLoading}
-          accessibilityLabel="Don't have an account? Sign up"
-          accessibilityRole="button"
-        >
-          <Text style={styles.link}>Don't have an account? Sign up</Text>
+
+        <TouchableOpacity>
+          <Text style={[styles.link, { color: currentTheme.primaryColor }]}>Forgot Password?</Text>
         </TouchableOpacity>
-      </Animated.View>
+      </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F3F4F6',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     padding: 20,
   },
-  logo: {
-    width: 150,
-    height: 50,
-    marginBottom: 40,
-  },
-  formContainer: {
-    width: '100%',
-    maxWidth: 400,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 15,
-    padding: 20,
-    elevation: 5,
+  logoContainer: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 48,
     ...Platform.select({
       ios: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 8 },
+        shadowOpacity: 0.3,
+        shadowRadius: 16,
+      },
+      android: {
+        elevation: 12,
+      },
+    }),
+  },
+  formContainer: {
+    width: "100%",
+    maxWidth: 400,
+    borderRadius: 20,
+    padding: 24,
+    ...Platform.select({
+      ios: {
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 8 },
         shadowOpacity: 0.1,
-        shadowRadius: 6,
+        shadowRadius: 16,
+      },
+      android: {
+        elevation: 8,
       },
     }),
   },
   title: {
-    fontSize: 28,
-    fontWeight: '700',
-    color: '#1E3A8A',
-    textAlign: 'center',
-    marginBottom: 20,
+    fontSize: 32,
+    fontWeight: "800",
+    textAlign: "center",
+    marginBottom: 24,
   },
   inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#F9FAFB',
-    borderRadius: 10,
-    marginBottom: 15,
-    paddingHorizontal: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 12,
+    marginBottom: 16,
+    paddingHorizontal: 16,
+    borderWidth: 1,
   },
   icon: {
-    marginRight: 10,
+    marginRight: 12,
   },
   input: {
     flex: 1,
-    height: 50,
+    height: 52,
     fontSize: 16,
-    color: '#1E3A8A',
   },
   button: {
-    borderRadius: 10,
-    paddingVertical: 15,
-    alignItems: 'center',
-    marginTop: 10,
+    borderRadius: 12,
+    marginTop: 16,
+    ...Platform.select({
+      ios: {
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 8,
+      },
+      android: {
+        elevation: 6,
+      },
+    }),
+  },
+  buttonContent: {
+    paddingVertical: 16,
+    alignItems: "center",
   },
   buttonText: {
-    color: '#F9FAFB',
+    color: "#FFFFFF",
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   link: {
-    color: '#60A5FA',
-    textAlign: 'center',
-    marginTop: 15,
-    fontSize: 14,
+    textAlign: "center",
+    marginTop: 20,
+    fontSize: 16,
+    fontWeight: "500",
   },
-});
+})
+
+export default LoginScreen
