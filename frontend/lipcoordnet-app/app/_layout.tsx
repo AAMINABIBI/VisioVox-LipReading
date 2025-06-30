@@ -10,6 +10,7 @@ import { AuthProvider, useAuth } from "../contexts/AuthContext"
 import { ThemeProvider, useTheme } from "../contexts/ThemeContext"
 
 // Screens
+import OnboardingScreen from "./OnboardingScreen"
 import LoginScreen from "./LoginScreen"
 import SignupScreen from "./SignupSCreen"
 import HomeScreen from "./HomeScreen"
@@ -21,6 +22,7 @@ import SettingsScreen from "./SettingsScreen"
 
 // Navigation Types
 export type RootStackParamList = {
+  Onboarding: undefined
   Auth: undefined
   Main: undefined
   Upload: undefined
@@ -129,7 +131,7 @@ function TabNavigator() {
 
 // Main App Navigator
 function AppNavigator() {
-  const { user, loading } = useAuth()
+  const { user, loading, hasCompletedOnboarding } = useAuth()
 
   if (loading) {
     return <LoadingScreen />
@@ -138,13 +140,18 @@ function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {user ? (
+        {!hasCompletedOnboarding ? (
+          // Show onboarding if not completed
+          <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+        ) : user ? (
+          // Show main app if user is authenticated
           <>
             <Stack.Screen name="Main" component={TabNavigator} />
             <Stack.Screen name="Results" component={ResultsScreen} />
             <Stack.Screen name="OutputSelection" component={OutputSelectionScreen} />
           </>
         ) : (
+          // Show auth screens if user is not authenticated
           <Stack.Screen name="Auth" component={AuthNavigator} />
         )}
       </Stack.Navigator>

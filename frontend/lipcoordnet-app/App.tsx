@@ -1,6 +1,7 @@
-import { registerRootComponent } from 'expo';
-import Layout from './app/_layout';
+import { registerRootComponent } from "expo"
+import Layout from "./app/_layout"
+export default function App() {
+  return <Layout />
+}
 
-export default Layout;
-
-registerRootComponent(Layout);
+registerRootComponent(App)
