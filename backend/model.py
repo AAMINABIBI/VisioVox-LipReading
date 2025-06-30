@@ -26,7 +26,7 @@ class LipCoordNet(torch.nn.Module):
         self.dropout = nn.Dropout(self.dropout_p)
         self.dropout3d = nn.Dropout3d(self.dropout_p)
 
-        # New GRU layer for lip coordinates
+        # GRU layer for lip coordinates - expects 40 input features (20 points * 2 coords)
         self.coord_gru = nn.GRU(
             coord_input_dim, coord_hidden_dim, 1, bidirectional=True
         )
@@ -65,7 +65,7 @@ class LipCoordNet(torch.nn.Module):
                 init.constant_(m.bias_ih_l0_reverse[i : i + 256], 0)
 
     def forward(self, x, coords):
-        # branch 1
+        # branch 1 - Video processing
         x = self.conv1(x)
         x = self.relu(x)
         x = self.dropout3d(x)
@@ -94,14 +94,12 @@ class LipCoordNet(torch.nn.Module):
         x, h = self.gru2(x)
         x = self.dropout(x)
 
-        # branch 2
-        # Process lip coordinates through GRU
+        # branch 2 - Coordinate processing
+        # coords shape: (B, T, 20, 2) -> need to reshape to (T, B, 40)
+        coords = coords.permute(1, 0, 2, 3).contiguous()  # (T, B, 20, 2)
+        coords = coords.view(coords.size(0), coords.size(1), -1)  # (T, B, 40)
+        
         self.coord_gru.flatten_parameters()
-
-        # (B, T, N, C)->(T, B, C, N, C)
-        coords = coords.permute(1, 0, 2, 3).contiguous()
-        # (T, B, C, N, C)->(T, B, C, N*C)
-        coords = coords.view(coords.size(0), coords.size(1), -1)
         coords, _ = self.coord_gru(coords)
         coords = self.dropout(coords)
 
