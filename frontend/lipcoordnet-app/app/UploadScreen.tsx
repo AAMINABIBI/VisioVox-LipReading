@@ -21,7 +21,7 @@ import Icon from "react-native-vector-icons/MaterialIcons"
 import axios from "axios"
 import type { RootStackParamList } from "./_layout"
 
-const API_BASE_URL = "http://192.168.100.19:8080" // Update this to your server IP
+const API_BASE_URL = "https://final-visiovox-backend-production.up.railway.app" // Update this to your server IP
 
 export default function UploadScreen() {
   const { currentTheme } = useTheme()
@@ -122,7 +122,7 @@ export default function UploadScreen() {
       const formData = new FormData()
       formData.append("file", {
         uri: videoUri,
-        name: "video.mp4",
+        name: `video.${selectedFileName.split(".").pop() || "mp4"}`,
         type: "video/mp4",
       } as any)
 
@@ -145,12 +145,14 @@ export default function UploadScreen() {
 
       if (response.data.success) {
         const { videoUri: processedUri, prediction, audioUri } = response.data
-
+        // Convert relative paths to full URLs
+        const fullVideoUri = processedUri ? `${API_BASE_URL}${processedUri}` : null
+        const fullAudioUri = audioUri ? `${API_BASE_URL}${audioUri}` : null
         // Navigate directly to OutputSelection screen
         navigation.navigate("OutputSelection", {
-          videoUri: processedUri,
+          videoUri: fullVideoUri,
           prediction,
-          audioUri,
+          audioUri: fullAudioUri,
         })
       } else {
         throw new Error(response.data.detail || "Upload failed")
@@ -187,7 +189,7 @@ export default function UploadScreen() {
         }
       }
     }
-  }, [videoUri, isUploading, navigation])
+  }, [videoUri, isUploading, navigation, selectedFileName])
 
   useEffect(() => {
     return () => {

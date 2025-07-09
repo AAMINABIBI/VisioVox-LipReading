@@ -1,0 +1,1127 @@
+diff --git a/node_modules/react-native-gesture-handler/android/build/.transforms/96e02af5a35198dc2b089ab8a97b03d9/results.bin b/node_modules/react-native-gesture-handler/android/build/.transforms/96e02af5a35198dc2b089ab8a97b03d9/results.bin
+new file mode 100644
+index 0000000..e3f0ff0
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/.transforms/96e02af5a35198dc2b089ab8a97b03d9/results.bin
+@@ -0,0 +1 @@
++i/classes_global-synthetics
+diff --git a/node_modules/react-native-gesture-handler/android/build/.transforms/b4e1211ce7e9762e698dd3f8a452f781/results.bin b/node_modules/react-native-gesture-handler/android/build/.transforms/b4e1211ce7e9762e698dd3f8a452f781/results.bin
+new file mode 100644
+index 0000000..61a58fa
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/.transforms/b4e1211ce7e9762e698dd3f8a452f781/results.bin
+@@ -0,0 +1 @@
++i/classes_dex
+diff --git a/node_modules/react-native-gesture-handler/android/build/.transforms/c960d06a88ecfb7f0f16ea642c4afbe8/results.bin b/node_modules/react-native-gesture-handler/android/build/.transforms/c960d06a88ecfb7f0f16ea642c4afbe8/results.bin
+new file mode 100644
+index 0000000..0d259dd
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/.transforms/c960d06a88ecfb7f0f16ea642c4afbe8/results.bin
+@@ -0,0 +1 @@
++o/classes
+diff --git a/node_modules/react-native-gesture-handler/android/build/.transforms/c960d06a88ecfb7f0f16ea642c4afbe8/transformed/classes/classes_dex/classes.dex b/node_modules/react-native-gesture-handler/android/build/.transforms/c960d06a88ecfb7f0f16ea642c4afbe8/transformed/classes/classes_dex/classes.dex
+new file mode 100644
+index 0000000..293fafa
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/.transforms/c960d06a88ecfb7f0f16ea642c4afbe8/transformed/classes/classes_dex/classes.dex differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/generated/source/buildConfig/debug/com/swmansion/gesturehandler/BuildConfig.java b/node_modules/react-native-gesture-handler/android/build/generated/source/buildConfig/debug/com/swmansion/gesturehandler/BuildConfig.java
+new file mode 100644
+index 0000000..2097245
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/generated/source/buildConfig/debug/com/swmansion/gesturehandler/BuildConfig.java
+@@ -0,0 +1,14 @@
++/**
++ * Automatically generated file. DO NOT MODIFY
++ */
++package com.swmansion.gesturehandler;
++
++public final class BuildConfig {
++  public static final boolean DEBUG = Boolean.parseBoolean("true");
++  public static final String LIBRARY_PACKAGE_NAME = "com.swmansion.gesturehandler";
++  public static final String BUILD_TYPE = "debug";
++  // Field from default config.
++  public static final boolean IS_NEW_ARCHITECTURE_ENABLED = false;
++  // Field from default config.
++  public static final int REACT_NATIVE_MINOR_VERSION = 73;
++}
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml b/node_modules/react-native-gesture-handler/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml
+new file mode 100644
+index 0000000..3796c4a
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.swmansion.gesturehandler" >
++
++    <uses-sdk android:minSdkVersion="23" />
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json b/node_modules/react-native-gesture-handler/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json
+new file mode 100644
+index 0000000..ee2ec18
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json
+@@ -0,0 +1,18 @@
++{
++  "version": 3,
++  "artifactType": {
++    "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
++    "kind": "Directory"
++  },
++  "applicationId": "com.swmansion.gesturehandler",
++  "variantName": "debug",
++  "elements": [
++    {
++      "type": "SINGLE",
++      "filters": [],
++      "attributes": [],
++      "outputFile": "AndroidManifest.xml"
++    }
++  ],
++  "elementType": "File"
++}
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/aar_metadata/debug/aar-metadata.properties b/node_modules/react-native-gesture-handler/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
+new file mode 100644
+index 0000000..776557e
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
+@@ -0,0 +1,5 @@
++aarFormatVersion=1.0
++aarMetadataVersion=1.0
++minCompileSdk=1
++minCompileSdkExtension=0
++minAndroidGradlePluginVersion=1.0.0
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/annotation_processor_list/debug/annotationProcessors.json b/node_modules/react-native-gesture-handler/android/build/intermediates/annotation_processor_list/debug/annotationProcessors.json
+new file mode 100644
+index 0000000..9e26dfe
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/annotation_processor_list/debug/annotationProcessors.json
+@@ -0,0 +1 @@
++{}
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/compile_library_classes_jar/debug/classes.jar b/node_modules/react-native-gesture-handler/android/build/intermediates/compile_library_classes_jar/debug/classes.jar
+new file mode 100644
+index 0000000..4b8e926
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/compile_library_classes_jar/debug/classes.jar differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/compile_r_class_jar/debug/R.jar b/node_modules/react-native-gesture-handler/android/build/intermediates/compile_r_class_jar/debug/R.jar
+new file mode 100644
+index 0000000..82be33a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/compile_r_class_jar/debug/R.jar differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/compile_symbol_list/debug/R.txt b/node_modules/react-native-gesture-handler/android/build/intermediates/compile_symbol_list/debug/R.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties b/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+new file mode 100644
+index 0000000..765c353
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+@@ -0,0 +1 @@
++#Tue Jul 01 04:42:12 PKT 2025
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml b/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+new file mode 100644
+index 0000000..3614bfe
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\build\generated\res\resValues\debug"/></dataSet><mergedItems/></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml b/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+new file mode 100644
+index 0000000..168fabb
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\debug\jniLibs"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/mergeDebugShaders/merger.xml b/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+new file mode 100644
+index 0000000..c571c93
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\debug\shaders"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/packageDebugAssets/merger.xml b/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/packageDebugAssets/merger.xml
+new file mode 100644
+index 0000000..99617f1
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/incremental/packageDebugAssets/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\assets"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\debug\assets"/></dataSet><dataSet config="generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\build\intermediates\shader_assets\debug\out"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/java_res/debug/out/META-INF/react-native-gesture-handler_debug.kotlin_module b/node_modules/react-native-gesture-handler/android/build/intermediates/java_res/debug/out/META-INF/react-native-gesture-handler_debug.kotlin_module
+new file mode 100644
+index 0000000..f65e960
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/java_res/debug/out/META-INF/react-native-gesture-handler_debug.kotlin_module differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerButtonManagerDelegate.class b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerButtonManagerDelegate.class
+new file mode 100644
+index 0000000..bf7b883
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerButtonManagerDelegate.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerButtonManagerInterface.class b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerButtonManagerInterface.class
+new file mode 100644
+index 0000000..00104a3
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerButtonManagerInterface.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerRootViewManagerDelegate.class b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerRootViewManagerDelegate.class
+new file mode 100644
+index 0000000..f02fd2f
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerRootViewManagerDelegate.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerRootViewManagerInterface.class b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerRootViewManagerInterface.class
+new file mode 100644
+index 0000000..61b58fe
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/facebook/react/viewmanagers/RNGestureHandlerRootViewManagerInterface.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/BuildConfig.class b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/BuildConfig.class
+new file mode 100644
+index 0000000..142aa8e
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/BuildConfig.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector$1.class b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector$1.class
+new file mode 100644
+index 0000000..b712a67
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector$1.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector$OnScaleGestureListener.class b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector$OnScaleGestureListener.class
+new file mode 100644
+index 0000000..efd1d43
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector$OnScaleGestureListener.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector$SimpleOnScaleGestureListener.class b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector$SimpleOnScaleGestureListener.class
+new file mode 100644
+index 0000000..6e85b69
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector$SimpleOnScaleGestureListener.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector.class b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector.class
+new file mode 100644
+index 0000000..e7f8169
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/javac/debug/classes/com/swmansion/gesturehandler/core/ScaleGestureDetector.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/local_only_symbol_list/debug/R-def.txt b/node_modules/react-native-gesture-handler/android/build/intermediates/local_only_symbol_list/debug/R-def.txt
+new file mode 100644
+index 0000000..78ac5b8
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/local_only_symbol_list/debug/R-def.txt
+@@ -0,0 +1,2 @@
++R_DEF: Internal format may change without notice
++local
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt b/node_modules/react-native-gesture-handler/android/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt
+new file mode 100644
+index 0000000..718aa82
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt
+@@ -0,0 +1,7 @@
++1<?xml version="1.0" encoding="utf-8"?>
++2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++3    package="com.swmansion.gesturehandler" >
++4
++5    <uses-sdk android:minSdkVersion="23" />
++6
++7</manifest>
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml b/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml
+new file mode 100644
+index 0000000..3796c4a
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.swmansion.gesturehandler" >
++
++    <uses-sdk android:minSdkVersion="23" />
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/navigation_json/debug/navigation.json b/node_modules/react-native-gesture-handler/android/build/intermediates/navigation_json/debug/navigation.json
+new file mode 100644
+index 0000000..0637a08
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/navigation_json/debug/navigation.json
+@@ -0,0 +1 @@
++[]
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar b/node_modules/react-native-gesture-handler/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar
+new file mode 100644
+index 0000000..0982d6f
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt b/node_modules/react-native-gesture-handler/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
+new file mode 100644
+index 0000000..3bd36e7
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
+@@ -0,0 +1 @@
++com.swmansion.gesturehandler
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab
+new file mode 100644
+index 0000000..475bc06
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream
+new file mode 100644
+index 0000000..0c8af2f
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream
+@@ -0,0 +1 @@
++ÑC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\GestureHandlerEventDataBuilder.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\paper\src\main\java\com\swmansion\gesturehandler\ReactContextExtensions.ktÖC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\FlingGestureHandlerEventDataBuilder.ktÅC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerStateChangeEvent.ktÄC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerEnabledRootView.kt²C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandler.ktºC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandlerRegistry.ktÄC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootViewManager.kt¿C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootHelper.kt¸C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\ManualGestureHandler.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\FlingGestureHandler.kt½C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootView.kt¿C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerTouchEvent.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\RotationGestureDetector.kt¾C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNViewConfigurationHelper.kt°C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureUtils.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\PinchGestureHandler.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerModule.kt¸C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\OnTouchEventListener.ktÂC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootInterface.ktµC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\TapGestureHandler.ktÇC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandlerInteractionController.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\ViewConfigurationHelper.ktÃC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\reanimated\src\main\java\com\swmansion\gesturehandler\ReanimatedEventDispatcher.ktÔC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\TapGestureHandlerEventDataBuilder.ktÇC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerInteractionManager.ktµC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\PanGestureHandler.ktÆC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerButtonViewManager.kt¶C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\RNGestureHandlerPackage.ktÔC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\PanGestureHandlerEventDataBuilder.ktÚC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\LongPressGestureHandlerEventDataBuilder.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\HoverGestureHandler.kt×C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\NativeGestureHandlerEventDataBuilder.kt¾C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandlerOrchestrator.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\PointerEventsConfig.ktÖC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\PinchGestureHandlerEventDataBuilder.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\LongPressGestureHandler.ktÖC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\HoverGestureHandlerEventDataBuilder.kt½C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRegistry.kt¼C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\NativeViewGestureHandler.kt×C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\ManualGestureHandlerEventDataBuilder.ktºC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\RotationGestureHandler.ktÙC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\RotationGestureHandlerEventDataBuilder.kt¯C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\Extensions.ktºC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerEvent.kt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len
+new file mode 100644
+index 0000000..c44eee5
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.len
+new file mode 100644
+index 0000000..60e54ab
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at
+new file mode 100644
+index 0000000..b74fe4a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i
+new file mode 100644
+index 0000000..de9db67
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab
+new file mode 100644
+index 0000000..76ae808
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream
+new file mode 100644
+index 0000000..3b94838
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len
+new file mode 100644
+index 0000000..8c78ab3
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.len
+new file mode 100644
+index 0000000..b7d7395
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at
+new file mode 100644
+index 0000000..cc74e23
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i
+new file mode 100644
+index 0000000..00ce49f
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab
+new file mode 100644
+index 0000000..197c92d
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream
+new file mode 100644
+index 0000000..3b94838
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len
+new file mode 100644
+index 0000000..8c78ab3
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len
+new file mode 100644
+index 0000000..b7d7395
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at
+new file mode 100644
+index 0000000..df8552e
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i
+new file mode 100644
+index 0000000..00ce49f
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab
+new file mode 100644
+index 0000000..5a44171
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.keystream
+new file mode 100644
+index 0000000..c6849c8
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.keystream.len
+new file mode 100644
+index 0000000..9edc14a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.len
+new file mode 100644
+index 0000000..817b326
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.values.at
+new file mode 100644
+index 0000000..ac9e438
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab_i
+new file mode 100644
+index 0000000..8bed096
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/constants.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab
+new file mode 100644
+index 0000000..3b1ab3b
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.keystream
+new file mode 100644
+index 0000000..9e0b2c6
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.keystream.len
+new file mode 100644
+index 0000000..1c209ae
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.len
+new file mode 100644
+index 0000000..2a17e6e
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.values.at
+new file mode 100644
+index 0000000..5ee499c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab_i
+new file mode 100644
+index 0000000..be41c79
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab
+new file mode 100644
+index 0000000..a4e298c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream
+new file mode 100644
+index 0000000..7a45f93
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len
+new file mode 100644
+index 0000000..9423f47
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len
+new file mode 100644
+index 0000000..80db049
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at
+new file mode 100644
+index 0000000..ff58e8a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i
+new file mode 100644
+index 0000000..d126b89
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab
+new file mode 100644
+index 0000000..f7b972e
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream
+new file mode 100644
+index 0000000..a005075
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream.len
+new file mode 100644
+index 0000000..60a4017
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.len
+new file mode 100644
+index 0000000..ec8f944
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at
+new file mode 100644
+index 0000000..0ed4f91
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i
+new file mode 100644
+index 0000000..0dd5a5d
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab
+new file mode 100644
+index 0000000..881fb86
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.keystream
+new file mode 100644
+index 0000000..29a8309
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len
+new file mode 100644
+index 0000000..55b698c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.len
+new file mode 100644
+index 0000000..01bdaa1
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.values.at
+new file mode 100644
+index 0000000..6fcb00a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab_i
+new file mode 100644
+index 0000000..a63b53f
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab
+new file mode 100644
+index 0000000..d194cf6
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream
+new file mode 100644
+index 0000000..d325382
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len
+new file mode 100644
+index 0000000..83cc05c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.len
+new file mode 100644
+index 0000000..a234394
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values
+new file mode 100644
+index 0000000..20bc79d
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at
+new file mode 100644
+index 0000000..6f7610f
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s
+new file mode 100644
+index 0000000..4016997
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s
+@@ -0,0 +1 @@
++ÃÔÓ¡
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i
+new file mode 100644
+index 0000000..25fcc31
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab
+new file mode 100644
+index 0000000..71bad95
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream
+new file mode 100644
+index 0000000..773b878
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream
+@@ -0,0 +1 @@
++»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\paper\src\main\java\com\swmansion\gesturehandler\ReactContextExtensions.ktÃC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\reanimated\src\main\java\com\swmansion\gesturehandler\ReanimatedEventDispatcher.kt¶C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\RNGestureHandlerPackage.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\FlingGestureHandler.kt²C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandler.ktÇC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandlerInteractionController.kt¾C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandlerOrchestrator.ktºC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandlerRegistry.kt°C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureUtils.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\HoverGestureHandler.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\LongPressGestureHandler.kt¸C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\ManualGestureHandler.kt¼C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\NativeViewGestureHandler.kt¸C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\OnTouchEventListener.ktµC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\PanGestureHandler.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\PinchGestureHandler.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\PointerEventsConfig.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\RotationGestureDetector.ktºC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\RotationGestureHandler.ktµC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\TapGestureHandler.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\ViewConfigurationHelper.kt¯C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\Extensions.ktÆC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerButtonViewManager.ktÄC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerEnabledRootView.ktºC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerEvent.ktÇC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerInteractionManager.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerModule.kt½C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRegistry.kt¿C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootHelper.ktÂC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootInterface.kt½C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootView.ktÄC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootViewManager.ktÅC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerStateChangeEvent.kt¿C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerTouchEvent.kt¾C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNViewConfigurationHelper.ktÖC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\FlingGestureHandlerEventDataBuilder.ktÑC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\GestureHandlerEventDataBuilder.ktÖC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\HoverGestureHandlerEventDataBuilder.ktÚC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\LongPressGestureHandlerEventDataBuilder.kt×C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\ManualGestureHandlerEventDataBuilder.kt×C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\NativeGestureHandlerEventDataBuilder.ktÔC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\PanGestureHandlerEventDataBuilder.ktÖC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\PinchGestureHandlerEventDataBuilder.ktÙC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\RotationGestureHandlerEventDataBuilder.ktÔC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\TapGestureHandlerEventDataBuilder.ktºC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\ScaleGestureDetector.javaÐC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\paper\src\main\java\com\facebook\react\viewmanagers\RNGestureHandlerButtonManagerInterface.javaÇC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\build\generated\source\buildConfig\debug\com\swmansion\gesturehandler\BuildConfig.javaÒC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\paper\src\main\java\com\facebook\react\viewmanagers\RNGestureHandlerRootViewManagerInterface.java                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len
+new file mode 100644
+index 0000000..d7c56f3
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.len
+new file mode 100644
+index 0000000..31ed51e
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at
+new file mode 100644
+index 0000000..2032d7a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i
+new file mode 100644
+index 0000000..13f0f81
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab
+new file mode 100644
+index 0000000..2cd5716
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream
+new file mode 100644
+index 0000000..384e6fb
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len
+new file mode 100644
+index 0000000..27ca665
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.len
+new file mode 100644
+index 0000000..14f7c06
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at
+new file mode 100644
+index 0000000..2d6c7b9
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i
+new file mode 100644
+index 0000000..ee9dca2
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab
+new file mode 100644
+index 0000000..a4f486a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream
+new file mode 100644
+index 0000000..b5ad360
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len
+new file mode 100644
+index 0000000..ced41bb
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len
+new file mode 100644
+index 0000000..b94f48d
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at
+new file mode 100644
+index 0000000..3ee0d06
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i
+new file mode 100644
+index 0000000..363474a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab
+new file mode 100644
+index 0000000..53c10fe
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab
+@@ -0,0 +1,2 @@
++45
++0
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab
+new file mode 100644
+index 0000000..3991f93
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream
+new file mode 100644
+index 0000000..cb7f2da
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream
+@@ -0,0 +1 @@
++»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\paper\src\main\java\com\swmansion\gesturehandler\ReactContextExtensions.ktÃC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\reanimated\src\main\java\com\swmansion\gesturehandler\ReanimatedEventDispatcher.kt¶C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\RNGestureHandlerPackage.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\FlingGestureHandler.kt²C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandler.ktÇC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandlerInteractionController.kt¾C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandlerOrchestrator.ktºC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureHandlerRegistry.kt°C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\GestureUtils.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\HoverGestureHandler.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\LongPressGestureHandler.kt¸C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\ManualGestureHandler.kt¼C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\NativeViewGestureHandler.kt¸C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\OnTouchEventListener.ktµC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\PanGestureHandler.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\PinchGestureHandler.kt·C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\PointerEventsConfig.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\RotationGestureDetector.ktºC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\RotationGestureHandler.ktµC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\TapGestureHandler.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\core\ViewConfigurationHelper.kt¯C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\Extensions.ktÆC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerButtonViewManager.ktÄC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerEnabledRootView.ktºC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerEvent.ktÇC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerInteractionManager.kt»C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerModule.kt½C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRegistry.kt¿C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootHelper.ktÂC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootInterface.kt½C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootView.ktÄC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerRootViewManager.ktÅC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerStateChangeEvent.kt¿C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNGestureHandlerTouchEvent.kt¾C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\RNViewConfigurationHelper.ktÖC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\FlingGestureHandlerEventDataBuilder.ktÑC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\GestureHandlerEventDataBuilder.ktÖC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\HoverGestureHandlerEventDataBuilder.ktÚC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\LongPressGestureHandlerEventDataBuilder.kt×C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\ManualGestureHandlerEventDataBuilder.kt×C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\NativeGestureHandlerEventDataBuilder.ktÔC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\PanGestureHandlerEventDataBuilder.ktÖC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\PinchGestureHandlerEventDataBuilder.ktÙC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\RotationGestureHandlerEventDataBuilder.ktÔC:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\java\com\swmansion\gesturehandler\react\eventbuilders\TapGestureHandlerEventDataBuilder.kt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream.len
+new file mode 100644
+index 0000000..c44eee5
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.len
+new file mode 100644
+index 0000000..60e54ab
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at
+new file mode 100644
+index 0000000..09cf79a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i
+new file mode 100644
+index 0000000..f251214
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab
+new file mode 100644
+index 0000000..2422221
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream
+new file mode 100644
+index 0000000..a2ef68d
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len
+new file mode 100644
+index 0000000..8aefb3a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len
+new file mode 100644
+index 0000000..60e54ab
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at
+new file mode 100644
+index 0000000..9b58701
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i
+new file mode 100644
+index 0000000..e829fa7
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab
+new file mode 100644
+index 0000000..0d83f5d
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream
+new file mode 100644
+index 0000000..a7a8490
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len
+new file mode 100644
+index 0000000..ee6e42b
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len
+new file mode 100644
+index 0000000..5d3cfd0
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values
+new file mode 100644
+index 0000000..5aafd8c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at
+new file mode 100644
+index 0000000..71d1a87
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.s b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.s
+new file mode 100644
+index 0000000..185e054
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.s
+@@ -0,0 +1 @@
++ïw
+\ No newline at end of file
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i
+new file mode 100644
+index 0000000..222709a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i.len b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i.len
+new file mode 100644
+index 0000000..6ed62c1
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i.len differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/last-build.bin b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/last-build.bin
+new file mode 100644
+index 0000000..2e25c08
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/cacheable/last-build.bin differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/local-state/build-history.bin b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/local-state/build-history.bin
+new file mode 100644
+index 0000000..bd77cef
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/kotlin/compileDebugKotlin/local-state/build-history.bin differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/outputs/logs/manifest-merger-debug-report.txt b/node_modules/react-native-gesture-handler/android/build/outputs/logs/manifest-merger-debug-report.txt
+new file mode 100644
+index 0000000..a77c38e
+--- /dev/null
++++ b/node_modules/react-native-gesture-handler/android/build/outputs/logs/manifest-merger-debug-report.txt
+@@ -0,0 +1,17 @@
++-- Merging decision tree log ---
++manifest
++ADDED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\AndroidManifest.xml:1:1-3:12
++INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\AndroidManifest.xml:1:1-3:12
++	package
++		ADDED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\AndroidManifest.xml:2:5-43
++		INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\AndroidManifest.xml
++	xmlns:android
++		ADDED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\AndroidManifest.xml:1:11-69
++uses-sdk
++INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
++INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\AndroidManifest.xml
++INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\AndroidManifest.xml
++	android:targetSdkVersion
++		INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\AndroidManifest.xml
++	android:minSdkVersion
++		INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\react-native-gesture-handler\android\src\main\AndroidManifest.xml
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin b/node_modules/react-native-gesture-handler/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin
+new file mode 100644
+index 0000000..c6511ec
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/META-INF/react-native-gesture-handler_debug.kotlin_module b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/META-INF/react-native-gesture-handler_debug.kotlin_module
+new file mode 100644
+index 0000000..f65e960
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/META-INF/react-native-gesture-handler_debug.kotlin_module differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/RNGestureHandlerPackage.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/RNGestureHandlerPackage.class
+new file mode 100644
+index 0000000..b7ac481
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/RNGestureHandlerPackage.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/ReactContextExtensionsKt.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/ReactContextExtensionsKt.class
+new file mode 100644
+index 0000000..41cf615
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/ReactContextExtensionsKt.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/ReanimatedEventDispatcher.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/ReanimatedEventDispatcher.class
+new file mode 100644
+index 0000000..ae3a0af
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/ReanimatedEventDispatcher.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/FlingGestureHandler$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/FlingGestureHandler$Companion.class
+new file mode 100644
+index 0000000..0d4e7fb
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/FlingGestureHandler$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/FlingGestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/FlingGestureHandler.class
+new file mode 100644
+index 0000000..11264ad
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/FlingGestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler$AdaptEventException.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler$AdaptEventException.class
+new file mode 100644
+index 0000000..0b3c9ae
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler$AdaptEventException.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler$Companion.class
+new file mode 100644
+index 0000000..e41a3e3
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler$PointerData.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler$PointerData.class
+new file mode 100644
+index 0000000..db699d3
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler$PointerData.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler.class
+new file mode 100644
+index 0000000..0e92895
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerInteractionController.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerInteractionController.class
+new file mode 100644
+index 0000000..3d88b66
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerInteractionController.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$Companion.class
+new file mode 100644
+index 0000000..247f624
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$WhenMappings.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$WhenMappings.class
+new file mode 100644
+index 0000000..fbb1066
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$WhenMappings.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$activateNativeHandlersForView$1$1.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$activateNativeHandlersForView$1$1.class
+new file mode 100644
+index 0000000..2091439
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$activateNativeHandlersForView$1$1.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$cleanupAwaitingHandlers$1.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$cleanupAwaitingHandlers$1.class
+new file mode 100644
+index 0000000..55bd23a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$cleanupAwaitingHandlers$1.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$cleanupFinishedHandlers$2.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$cleanupFinishedHandlers$2.class
+new file mode 100644
+index 0000000..d4c072d
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator$cleanupFinishedHandlers$2.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator.class
+new file mode 100644
+index 0000000..4f12287
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerRegistry.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerRegistry.class
+new file mode 100644
+index 0000000..7917ef3
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureHandlerRegistry.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureUtils.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureUtils.class
+new file mode 100644
+index 0000000..000c3e9
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/GestureUtils.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/HoverGestureHandler$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/HoverGestureHandler$Companion.class
+new file mode 100644
+index 0000000..6be1b70
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/HoverGestureHandler$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/HoverGestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/HoverGestureHandler.class
+new file mode 100644
+index 0000000..5b60800
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/HoverGestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/LongPressGestureHandler$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/LongPressGestureHandler$Companion.class
+new file mode 100644
+index 0000000..6ae30c3
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/LongPressGestureHandler$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/LongPressGestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/LongPressGestureHandler.class
+new file mode 100644
+index 0000000..041bfa5
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/LongPressGestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/ManualGestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/ManualGestureHandler.class
+new file mode 100644
+index 0000000..7bb2215
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/ManualGestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$Companion$defaultHook$1.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$Companion$defaultHook$1.class
+new file mode 100644
+index 0000000..184b552
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$Companion$defaultHook$1.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$Companion.class
+new file mode 100644
+index 0000000..4c14fe4
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$EditTextHook.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$EditTextHook.class
+new file mode 100644
+index 0000000..41142c2
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$EditTextHook.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$NativeViewGestureHandlerHook$DefaultImpls.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$NativeViewGestureHandlerHook$DefaultImpls.class
+new file mode 100644
+index 0000000..9a43bee
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$NativeViewGestureHandlerHook$DefaultImpls.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$NativeViewGestureHandlerHook.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$NativeViewGestureHandlerHook.class
+new file mode 100644
+index 0000000..2cd7863
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$NativeViewGestureHandlerHook.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$ScrollViewHook.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$ScrollViewHook.class
+new file mode 100644
+index 0000000..b167eff
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$ScrollViewHook.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$SwipeRefreshLayoutHook.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$SwipeRefreshLayoutHook.class
+new file mode 100644
+index 0000000..60562e2
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler$SwipeRefreshLayoutHook.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler.class
+new file mode 100644
+index 0000000..c885897
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/NativeViewGestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/OnTouchEventListener.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/OnTouchEventListener.class
+new file mode 100644
+index 0000000..542a4bd
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/OnTouchEventListener.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PanGestureHandler$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PanGestureHandler$Companion.class
+new file mode 100644
+index 0000000..bd461b2
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PanGestureHandler$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PanGestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PanGestureHandler.class
+new file mode 100644
+index 0000000..cb595b8
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PanGestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PinchGestureHandler$gestureListener$1.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PinchGestureHandler$gestureListener$1.class
+new file mode 100644
+index 0000000..918a91b
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PinchGestureHandler$gestureListener$1.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PinchGestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PinchGestureHandler.class
+new file mode 100644
+index 0000000..75c9579
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PinchGestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PointerEventsConfig.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PointerEventsConfig.class
+new file mode 100644
+index 0000000..4a5ca50
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/PointerEventsConfig.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureDetector$OnRotationGestureListener.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureDetector$OnRotationGestureListener.class
+new file mode 100644
+index 0000000..69c12a9
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureDetector$OnRotationGestureListener.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureDetector.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureDetector.class
+new file mode 100644
+index 0000000..73bb397
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureDetector.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureHandler$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureHandler$Companion.class
+new file mode 100644
+index 0000000..02a7c4e
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureHandler$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureHandler$gestureListener$1.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureHandler$gestureListener$1.class
+new file mode 100644
+index 0000000..76a8b35
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureHandler$gestureListener$1.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureHandler.class
+new file mode 100644
+index 0000000..42ba1fb
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/RotationGestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/TapGestureHandler$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/TapGestureHandler$Companion.class
+new file mode 100644
+index 0000000..4cecd36
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/TapGestureHandler$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/TapGestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/TapGestureHandler.class
+new file mode 100644
+index 0000000..25043e5
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/TapGestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/ViewConfigurationHelper.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/ViewConfigurationHelper.class
+new file mode 100644
+index 0000000..6389f57
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/core/ViewConfigurationHelper.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/ExtensionsKt.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/ExtensionsKt.class
+new file mode 100644
+index 0000000..fcf7fca
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/ExtensionsKt.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager$ButtonViewGroup$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager$ButtonViewGroup$Companion.class
+new file mode 100644
+index 0000000..cf78729
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager$ButtonViewGroup$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager$ButtonViewGroup.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager$ButtonViewGroup.class
+new file mode 100644
+index 0000000..30ce208
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager$ButtonViewGroup.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager$Companion.class
+new file mode 100644
+index 0000000..fdeee51
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager.class
+new file mode 100644
+index 0000000..459698c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerEnabledRootView.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerEnabledRootView.class
+new file mode 100644
+index 0000000..0054d6f
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerEnabledRootView.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerEvent$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerEvent$Companion.class
+new file mode 100644
+index 0000000..07fb77f
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerEvent$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerEvent.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerEvent.class
+new file mode 100644
+index 0000000..03f9e7e
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerEvent.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerInteractionManager$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerInteractionManager$Companion.class
+new file mode 100644
+index 0000000..5a982a6
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerInteractionManager$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerInteractionManager.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerInteractionManager.class
+new file mode 100644
+index 0000000..f00aafb
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerInteractionManager.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$Companion.class
+new file mode 100644
+index 0000000..e0d2e4c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$FlingGestureHandlerFactory.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$FlingGestureHandlerFactory.class
+new file mode 100644
+index 0000000..e685a98
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$FlingGestureHandlerFactory.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$HandlerFactory.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$HandlerFactory.class
+new file mode 100644
+index 0000000..653a25f
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$HandlerFactory.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$HoverGestureHandlerFactory.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$HoverGestureHandlerFactory.class
+new file mode 100644
+index 0000000..69ab00a
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$HoverGestureHandlerFactory.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$LongPressGestureHandlerFactory.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$LongPressGestureHandlerFactory.class
+new file mode 100644
+index 0000000..d3e101c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$LongPressGestureHandlerFactory.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$ManualGestureHandlerFactory.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$ManualGestureHandlerFactory.class
+new file mode 100644
+index 0000000..74348e0
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$ManualGestureHandlerFactory.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$NativeViewGestureHandlerFactory.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$NativeViewGestureHandlerFactory.class
+new file mode 100644
+index 0000000..1f0da65
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$NativeViewGestureHandlerFactory.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$PanGestureHandlerFactory.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$PanGestureHandlerFactory.class
+new file mode 100644
+index 0000000..173829c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$PanGestureHandlerFactory.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$PinchGestureHandlerFactory.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$PinchGestureHandlerFactory.class
+new file mode 100644
+index 0000000..daa42a1
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$PinchGestureHandlerFactory.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$RotationGestureHandlerFactory.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$RotationGestureHandlerFactory.class
+new file mode 100644
+index 0000000..1f3940c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$RotationGestureHandlerFactory.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$TapGestureHandlerFactory.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$TapGestureHandlerFactory.class
+new file mode 100644
+index 0000000..f43b01b
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$TapGestureHandlerFactory.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$eventListener$1.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$eventListener$1.class
+new file mode 100644
+index 0000000..b342101
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule$eventListener$1.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule.class
+new file mode 100644
+index 0000000..3f05110
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerModule.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRegistry.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRegistry.class
+new file mode 100644
+index 0000000..a661170
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRegistry.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootHelper$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootHelper$Companion.class
+new file mode 100644
+index 0000000..f034fa9
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootHelper$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootHelper$RootViewGestureHandler.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootHelper$RootViewGestureHandler.class
+new file mode 100644
+index 0000000..12f4bf5
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootHelper$RootViewGestureHandler.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootHelper.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootHelper.class
+new file mode 100644
+index 0000000..677dc4d
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootHelper.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootInterface.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootInterface.class
+new file mode 100644
+index 0000000..80dde6b
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootInterface.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootView$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootView$Companion.class
+new file mode 100644
+index 0000000..e0ce14d
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootView$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootView.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootView.class
+new file mode 100644
+index 0000000..37a8a21
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootView.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootViewManager$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootViewManager$Companion.class
+new file mode 100644
+index 0000000..67c24ee
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootViewManager$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootViewManager.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootViewManager.class
+new file mode 100644
+index 0000000..5c32794
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerRootViewManager.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerStateChangeEvent$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerStateChangeEvent$Companion.class
+new file mode 100644
+index 0000000..ee59cb9
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerStateChangeEvent$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerStateChangeEvent.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerStateChangeEvent.class
+new file mode 100644
+index 0000000..916bc8c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerStateChangeEvent.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerTouchEvent$Companion.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerTouchEvent$Companion.class
+new file mode 100644
+index 0000000..f9180a8
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerTouchEvent$Companion.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerTouchEvent.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerTouchEvent.class
+new file mode 100644
+index 0000000..ed7556c
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNGestureHandlerTouchEvent.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNViewConfigurationHelper$WhenMappings.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNViewConfigurationHelper$WhenMappings.class
+new file mode 100644
+index 0000000..02ffd41
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNViewConfigurationHelper$WhenMappings.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNViewConfigurationHelper.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNViewConfigurationHelper.class
+new file mode 100644
+index 0000000..d137321
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/RNViewConfigurationHelper.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/FlingGestureHandlerEventDataBuilder.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/FlingGestureHandlerEventDataBuilder.class
+new file mode 100644
+index 0000000..a9daf4f
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/FlingGestureHandlerEventDataBuilder.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/GestureHandlerEventDataBuilder.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/GestureHandlerEventDataBuilder.class
+new file mode 100644
+index 0000000..83f722e
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/GestureHandlerEventDataBuilder.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/HoverGestureHandlerEventDataBuilder.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/HoverGestureHandlerEventDataBuilder.class
+new file mode 100644
+index 0000000..ed653f6
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/HoverGestureHandlerEventDataBuilder.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/LongPressGestureHandlerEventDataBuilder.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/LongPressGestureHandlerEventDataBuilder.class
+new file mode 100644
+index 0000000..e9b3c54
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/LongPressGestureHandlerEventDataBuilder.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/ManualGestureHandlerEventDataBuilder.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/ManualGestureHandlerEventDataBuilder.class
+new file mode 100644
+index 0000000..1d907ab
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/ManualGestureHandlerEventDataBuilder.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/NativeGestureHandlerEventDataBuilder.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/NativeGestureHandlerEventDataBuilder.class
+new file mode 100644
+index 0000000..3317678
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/NativeGestureHandlerEventDataBuilder.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/PanGestureHandlerEventDataBuilder.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/PanGestureHandlerEventDataBuilder.class
+new file mode 100644
+index 0000000..fa607d7
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/PanGestureHandlerEventDataBuilder.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/PinchGestureHandlerEventDataBuilder.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/PinchGestureHandlerEventDataBuilder.class
+new file mode 100644
+index 0000000..155aeed
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/PinchGestureHandlerEventDataBuilder.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/RotationGestureHandlerEventDataBuilder.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/RotationGestureHandlerEventDataBuilder.class
+new file mode 100644
+index 0000000..751de3b
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/RotationGestureHandlerEventDataBuilder.class differ
+diff --git a/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/TapGestureHandlerEventDataBuilder.class b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/TapGestureHandlerEventDataBuilder.class
+new file mode 100644
+index 0000000..b8714f1
+Binary files /dev/null and b/node_modules/react-native-gesture-handler/android/build/tmp/kotlin-classes/debug/com/swmansion/gesturehandler/react/eventbuilders/TapGestureHandlerEventDataBuilder.class differ

@@ -1,16 +1,41 @@
 "use client"
 
-import { useState } from "react"
-import { View, Text, StyleSheet, Switch, Platform, TouchableOpacity, ActivityIndicator } from "react-native"
+import { useState, useEffect } from "react"
+import { View, Text, StyleSheet, Switch, Platform, TouchableOpacity, ActivityIndicator, Modal } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import Icon from "react-native-vector-icons/MaterialIcons"
 import { useTheme } from "../contexts/ThemeContext"
 import { useAuth } from "../contexts/AuthContext"
+import Animated, { useSharedValue, useAnimatedStyle, withTiming, Easing } from "react-native-reanimated"
 
 const SettingsScreen = () => {
   const { theme, currentTheme, toggleTheme } = useTheme()
-  const { logout } = useAuth()
+  const { user, logout } = useAuth()
   const [isLoading, setIsLoading] = useState(false)
+  const [isAboutModalVisible, setIsAboutModalVisible] = useState(false)
+
+  const headerOpacity = useSharedValue(0)
+  const cardOpacity = useSharedValue(0)
+
+  useEffect(() => {
+    // Animation setup
+    headerOpacity.value = withTiming(1, { duration: 800, easing: Easing.out(Easing.cubic) })
+    cardOpacity.value = withTiming(1, { duration: 1000, easing: Easing.out(Easing.cubic) })
+  }, [])
+
+  const animatedHeaderStyle = useAnimatedStyle(() => {
+    return {
+      opacity: headerOpacity.value,
+      transform: [{ translateY: withTiming(headerOpacity.value * 10, { duration: 800 }) }],
+    }
+  })
+
+  const animatedCardStyle = useAnimatedStyle(() => {
+    return {
+      opacity: cardOpacity.value,
+      transform: [{ scale: withTiming(cardOpacity.value, { duration: 1000 }) }],
+    }
+  })
 
   const handleLogout = async () => {
     setIsLoading(true)
@@ -25,39 +50,92 @@ const SettingsScreen = () => {
 
   return (
     <View style={[styles.container, { backgroundColor: currentTheme.backgroundColor }]}>
-      <View style={styles.header}>
-        <LinearGradient colors={["#1E3A8A", "#60A5FA"]} style={styles.headerIcon}>
-          <Icon name="settings" size={40} color="#FFFFFF" />
+      <Animated.View style={[styles.header, animatedHeaderStyle]}>
+        <LinearGradient colors={["#3B82F6", "#60A5FA"]} style={styles.headerIcon}>
+          <Icon name="settings" size={36} color="#FFFFFF" />
         </LinearGradient>
         <Text style={[styles.logoText, { color: currentTheme.textColor }]}>Settings</Text>
-        <Text style={[styles.subtitle, { color: currentTheme.textColor }]}>Customize your app experience</Text>
-      </View>
+        <Text style={[styles.subtitle, { color: currentTheme.textColor + "B3" }]}>
+          Customize your LipCoordNet experience
+        </Text>
+      </Animated.View>
 
-      <View
-        style={[styles.settingsCard, { backgroundColor: currentTheme.cardBackground || currentTheme.backgroundColor }]}
+      <Animated.View
+        style={[styles.settingsCard, { backgroundColor: currentTheme.cardBackground || currentTheme.backgroundColor }, animatedCardStyle]}
       >
         <View style={styles.settingRow}>
-          <View>
+          <View style={styles.settingTextContainer}>
+            <Text style={[styles.settingLabel, { color: currentTheme.textColor }]}>Account</Text>
+            <Text style={[styles.settingDescription, { color: currentTheme.textColor + "B3" }]}>
+              {user?.email || "No user logged in"}
+            </Text>
+          </View>
+        </View>
+
+        <View style={styles.settingRow}>
+          <View style={styles.settingTextContainer}>
             <Text style={[styles.settingLabel, { color: currentTheme.textColor }]}>Appearance</Text>
-            <Text style={[styles.settingDescription, { color: currentTheme.textColor }]}>
+            <Text style={[styles.settingDescription, { color: currentTheme.textColor + "B3" }]}>
               {theme === "dark" ? "Dark mode enabled" : "Light mode enabled"}
             </Text>
           </View>
           <Switch
             value={theme === "dark"}
             onValueChange={toggleTheme}
-            trackColor={{ false: "#767577", true: currentTheme.primaryColor }}
-            thumbColor={currentTheme.buttonBackground || "#f4f3f4"}
+            trackColor={{ false: "#D1D5DB", true: currentTheme.primaryColor }}
+            thumbColor={theme === "dark" ? "#FFFFFF" : "#F3F4F6"}
             accessibilityLabel="Toggle theme between light and dark"
           />
         </View>
 
-        <LinearGradient colors={["#000080", "#1E90FF"]} style={styles.button}>
+        <TouchableOpacity onPress={() => setIsAboutModalVisible(true)} style={styles.settingRow}>
+          <View style={styles.settingTextContainer}>
+            <Text style={[styles.settingLabel, { color: currentTheme.textColor }]}>About LipCoordNet</Text>
+            <Text style={[styles.settingDescription, { color: currentTheme.textColor + "B3" }]}>
+              Learn more about our AI-powered platform
+            </Text>
+          </View>
+          <Icon name="chevron-right" size={24} color={currentTheme.primaryColor} />
+        </TouchableOpacity>
+
+        <LinearGradient colors={["#3B82F6", "#1E3A8A"]} style={styles.button}>
           <TouchableOpacity onPress={handleLogout} accessibilityLabel="Log Out" disabled={isLoading}>
             <Text style={styles.buttonText}>{isLoading ? "Logging Out..." : "Log Out"}</Text>
           </TouchableOpacity>
         </LinearGradient>
-      </View>
+      </Animated.View>
+
+      {/* About Modal */}
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={isAboutModalVisible}
+        onRequestClose={() => setIsAboutModalVisible(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalContent, { backgroundColor: currentTheme.cardBackground || currentTheme.backgroundColor }]}>
+            <View style={styles.modalHeader}>
+              <Text style={[styles.modalTitle, { color: currentTheme.textColor }]}>About LipCoordNet</Text>
+              <TouchableOpacity onPress={() => setIsAboutModalVisible(false)}>
+                <Icon name="close" size={24} color={currentTheme.textColor} />
+              </TouchableOpacity>
+            </View>
+            <Text style={[styles.modalText, { color: currentTheme.textColor + "B3" }]}>
+              LipCoordNet is an innovative platform that uses AI to analyze lip movements and generate accurate text, audio, and video outputs, enhancing communication accessibility.
+            </Text>
+            <Text style={[styles.modalText, { color: currentTheme.textColor + "B3" }]}>
+              Version: 1.0.0
+            </Text>
+           
+            <LinearGradient colors={["#3B82F6", "#1E3A8A"]} style={styles.modalButton}>
+              <TouchableOpacity onPress={() => setIsAboutModalVisible(false)}>
+                <Text style={styles.modalButtonText}>Close</Text>
+              </TouchableOpacity>
+            </LinearGradient>
+          </View>
+        </View>
+      </Modal>
+
       {isLoading && <ActivityIndicator size="large" color={currentTheme.primaryColor} style={styles.loader} />}
     </View>
   )
@@ -66,56 +144,57 @@ const SettingsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
-    paddingHorizontal: 20,
+    paddingTop: 50,
+    paddingHorizontal: 16,
+    paddingBottom: 20,
   },
   header: {
     alignItems: "center",
-    marginBottom: 32,
+    marginBottom: 24,
   },
   headerIcon: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+    width: 70,
+    height: 70,
+    borderRadius: 35,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 16,
+    marginBottom: 12,
     ...Platform.select({
       ios: {
         shadowColor: "#000",
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.3,
-        shadowRadius: 8,
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.2,
+        shadowRadius: 6,
       },
       android: {
-        elevation: 8,
+        elevation: 6,
       },
     }),
   },
   logoText: {
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: "700",
-    marginBottom: 8,
+    marginBottom: 6,
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: 14,
+    fontWeight: "400",
     opacity: 0.7,
     textAlign: "center",
   },
   settingsCard: {
     width: "100%",
-    padding: 24,
-    borderRadius: 20,
-    marginBottom: 24,
+    padding: 20,
+    borderRadius: 16,
     ...Platform.select({
       ios: {
         shadowColor: "#000",
-        shadowOffset: { width: 0, height: 8 },
-        shadowOpacity: 0.1,
-        shadowRadius: 16,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.15,
+        shadowRadius: 10,
       },
       android: {
-        elevation: 8,
+        elevation: 6,
       },
     }),
   },
@@ -123,31 +202,70 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 16,
+    paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: "#F3F4F6",
+    borderBottomColor: "#E5E7EB",
+    marginBottom: 8,
+  },
+  settingTextContainer: {
+    flex: 1,
   },
   settingLabel: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: "600",
   },
   settingDescription: {
-    fontSize: 14,
+    fontSize: 13,
+    fontWeight: "400",
     opacity: 0.7,
-    marginTop: 2,
+    marginTop: 4,
   },
   button: {
-    paddingVertical: 16,
-    paddingHorizontal: 32,
+    paddingVertical: 14,
+    paddingHorizontal: 28,
     borderRadius: 12,
     marginTop: 16,
-    width: "100%",
     alignItems: "center",
     ...Platform.select({
       ios: {
         shadowColor: "#000",
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.25,
+        shadowRadius: 6,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 15,
+    fontWeight: "600",
+    textAlign: "center",
+  },
+  loader: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: [{ translateX: -20 }, { translateY: -20 }],
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalContent: {
+    width: "90%",
+    maxWidth: 400,
+    padding: 20,
+    borderRadius: 16,
+    ...Platform.select({
+      ios: {
+        shadowColor: "#000",
         shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.3,
+        shadowOpacity: 0.2,
         shadowRadius: 8,
       },
       android: {
@@ -155,14 +273,35 @@ const styles = StyleSheet.create({
       },
     }),
   },
-  buttonText: {
-    color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "600",
-    textAlign: "center",
+  modalHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 16,
   },
-  loader: {
-    marginTop: 20,
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: "600",
+  },
+  modalText: {
+    fontSize: 14,
+    lineHeight: 20,
+    marginBottom: 12,
+  },
+  modalLink: {
+    fontSize: 14,
+    marginBottom: 16,
+  },
+  modalButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 10,
+    alignItems: "center",
+  },
+  modalButtonText: {
+    color: "#FFFFFF",
+    fontSize: 14,
+    fontWeight: "600",
   },
 })
 

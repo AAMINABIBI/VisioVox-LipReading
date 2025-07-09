@@ -1,22 +1,18 @@
 "use client"
 
-import type React from "react"
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
 import { auth } from "../firebaseConfig"
-import type firebase from "firebase/compat/app"
-
-// Use firebase.User instead of importing User separately
-type User = firebase.User
+import { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth"
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
 interface AuthContextType {
-  user: User | null
-  userName: string
+  user: import("firebase/auth").User | null
   login: (email: string, password: string) => Promise<void>
   signup: (email: string, password: string) => Promise<void>
   logout: () => Promise<void>
   loading: boolean
   hasCompletedOnboarding: boolean
-  completeOnboarding: () => void
+  completeOnboarding: () => Promise<void>
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
@@ -34,26 +30,31 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useState<import("firebase/auth").User | null>(null)
   const [loading, setLoading] = useState(true)
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState(false)
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setUser(user)
+      if (user) {
+        const onboardingStatus = await AsyncStorage.getItem("hasCompletedOnboarding")
+        setHasCompletedOnboarding(onboardingStatus === "true")
+      } else {
+        setHasCompletedOnboarding(false)
+      }
       setLoading(false)
     })
-
-    return unsubscribe
+    return () => unsubscribe()
   }, [])
 
   const login = async (email: string, password: string): Promise<void> => {
     setLoading(true)
     try {
-      await auth.signInWithEmailAndPassword(email, password)
-    } catch (error) {
+      await signInWithEmailAndPassword(auth, email, password)
+    } catch (error: any) {
       console.error("Login error:", error)
-      throw error
+      throw new Error(error.message || "Failed to log in")
     } finally {
       setLoading(false)
     }
@@ -62,10 +63,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const signup = async (email: string, password: string): Promise<void> => {
     setLoading(true)
     try {
-      await auth.createUserWithEmailAndPassword(email, password)
-    } catch (error) {
+      await createUserWithEmailAndPassword(auth, email, password)
+    } catch (error: any) {
       console.error("Signup error:", error)
-      throw error
+      throw new Error(error.message || "Failed to sign up")
     } finally {
       setLoading(false)
     }
@@ -74,24 +75,27 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const logout = async (): Promise<void> => {
     setLoading(true)
     try {
-      await auth.signOut()
-    } catch (error) {
+      await signOut(auth)
+      await AsyncStorage.removeItem("hasCompletedOnboarding")
+    } catch (error: any) {
       console.error("Logout error:", error)
-      throw error
+      throw new Error(error.message || "Failed to log out")
     } finally {
       setLoading(false)
     }
   }
 
-  const completeOnboarding = (): void => {
-    setHasCompletedOnboarding(true)
+  const completeOnboarding = async (): Promise<void> => {
+    try {
+      await AsyncStorage.setItem("hasCompletedOnboarding", "true")
+      setHasCompletedOnboarding(true)
+    } catch (error) {
+      console.error("Failed to save onboarding status:", error)
+    }
   }
-
-  const userName = user?.displayName || user?.email?.split("@")[0] || "User"
 
   const value: AuthContextType = {
     user,
-    userName,
     login,
     signup,
     logout,

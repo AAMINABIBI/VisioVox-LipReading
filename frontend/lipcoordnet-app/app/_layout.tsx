@@ -12,7 +12,7 @@ import { ThemeProvider, useTheme } from "../contexts/ThemeContext"
 // Screens
 import OnboardingScreen from "./OnboardingScreen"
 import LoginScreen from "./LoginScreen"
-import SignupScreen from "./SignupSCreen"
+import SignupScreen from "./SignupScreen"
 import HomeScreen from "./HomeScreen"
 import UploadScreen from "./UploadScreen"
 import ResultsScreen from "./ResultsScreen"
@@ -40,8 +40,8 @@ export type RootStackParamList = {
 }
 
 export type AuthStackParamList = {
-  login: undefined
-  signup: undefined
+  Login: undefined
+  Signup: undefined
 }
 
 export type TabParamList = {
@@ -76,9 +76,9 @@ function LoadingScreen() {
 // Auth Stack Navigator
 function AuthNavigator() {
   return (
-    <AuthStack.Navigator screenOptions={{ headerShown: false }}>
-      <AuthStack.Screen name="login" component={LoginScreen} />
-      <AuthStack.Screen name="signup" component={SignupScreen} />
+    <AuthStack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Login">
+      <AuthStack.Screen name="Login" component={LoginScreen} />
+      <AuthStack.Screen name="Signup" component={SignupScreen} />
     </AuthStack.Navigator>
   )
 }

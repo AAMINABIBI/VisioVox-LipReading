@@ -1,0 +1,299 @@
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/1c91b7084200f1f5aba86deab9d409a1/results.bin b/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/1c91b7084200f1f5aba86deab9d409a1/results.bin
+new file mode 100644
+index 0000000..e3f0ff0
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/1c91b7084200f1f5aba86deab9d409a1/results.bin
+@@ -0,0 +1 @@
++i/classes_global-synthetics
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/4a7372302d3b4a3a75656a48c887bead/results.bin b/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/4a7372302d3b4a3a75656a48c887bead/results.bin
+new file mode 100644
+index 0000000..0d259dd
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/4a7372302d3b4a3a75656a48c887bead/results.bin
+@@ -0,0 +1 @@
++o/classes
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/4a7372302d3b4a3a75656a48c887bead/transformed/classes/classes_dex/classes.dex b/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/4a7372302d3b4a3a75656a48c887bead/transformed/classes/classes_dex/classes.dex
+new file mode 100644
+index 0000000..3d036b9
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/4a7372302d3b4a3a75656a48c887bead/transformed/classes/classes_dex/classes.dex differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/d0d280a7515d25f03cb95173d5c56253/results.bin b/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/d0d280a7515d25f03cb95173d5c56253/results.bin
+new file mode 100644
+index 0000000..61a58fa
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/d0d280a7515d25f03cb95173d5c56253/results.bin
+@@ -0,0 +1 @@
++i/classes_dex
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/buildConfig/debug/com/reactnativecommunity/asyncstorage/BuildConfig.java b/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/buildConfig/debug/com/reactnativecommunity/asyncstorage/BuildConfig.java
+new file mode 100644
+index 0000000..b79ef60
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/buildConfig/debug/com/reactnativecommunity/asyncstorage/BuildConfig.java
+@@ -0,0 +1,16 @@
++/**
++ * Automatically generated file. DO NOT MODIFY
++ */
++package com.reactnativecommunity.asyncstorage;
++
++public final class BuildConfig {
++  public static final boolean DEBUG = Boolean.parseBoolean("true");
++  public static final String LIBRARY_PACKAGE_NAME = "com.reactnativecommunity.asyncstorage";
++  public static final String BUILD_TYPE = "debug";
++  // Field from default config.
++  public static final Long AsyncStorage_db_size = 6L;
++  // Field from default config.
++  public static final boolean AsyncStorage_useDedicatedExecutor = false;
++  // Field from default config.
++  public static final boolean AsyncStorage_useNextStorage = false;
++}
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml
+new file mode 100644
+index 0000000..b888bf4
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.reactnativecommunity.asyncstorage" >
++
++    <uses-sdk android:minSdkVersion="23" />
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json
+new file mode 100644
+index 0000000..5b1382f
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json
+@@ -0,0 +1,18 @@
++{
++  "version": 3,
++  "artifactType": {
++    "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
++    "kind": "Directory"
++  },
++  "applicationId": "com.reactnativecommunity.asyncstorage",
++  "variantName": "debug",
++  "elements": [
++    {
++      "type": "SINGLE",
++      "filters": [],
++      "attributes": [],
++      "outputFile": "AndroidManifest.xml"
++    }
++  ],
++  "elementType": "File"
++}
+\ No newline at end of file
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/aar_metadata/debug/aar-metadata.properties b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
+new file mode 100644
+index 0000000..776557e
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
+@@ -0,0 +1,5 @@
++aarFormatVersion=1.0
++aarMetadataVersion=1.0
++minCompileSdk=1
++minCompileSdkExtension=0
++minAndroidGradlePluginVersion=1.0.0
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/annotation_processor_list/debug/annotationProcessors.json b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/annotation_processor_list/debug/annotationProcessors.json
+new file mode 100644
+index 0000000..9e26dfe
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/annotation_processor_list/debug/annotationProcessors.json
+@@ -0,0 +1 @@
++{}
+\ No newline at end of file
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/compile_library_classes_jar/debug/classes.jar b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/compile_library_classes_jar/debug/classes.jar
+new file mode 100644
+index 0000000..3796efd
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/compile_library_classes_jar/debug/classes.jar differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/compile_r_class_jar/debug/R.jar b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/compile_r_class_jar/debug/R.jar
+new file mode 100644
+index 0000000..938ab49
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/compile_r_class_jar/debug/R.jar differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/compile_symbol_list/debug/R.txt b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/compile_symbol_list/debug/R.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+new file mode 100644
+index 0000000..765c353
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+@@ -0,0 +1 @@
++#Tue Jul 01 04:42:12 PKT 2025
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+new file mode 100644
+index 0000000..616de00
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\build\generated\res\resValues\debug"/></dataSet><mergedItems/></merger>
+\ No newline at end of file
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/mergeDebugShaders/merger.xml b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+new file mode 100644
+index 0000000..a00e0a7
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\debug\shaders"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/packageDebugAssets/merger.xml b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/packageDebugAssets/merger.xml
+new file mode 100644
+index 0000000..4144e3c
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/incremental/packageDebugAssets/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\assets"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\debug\assets"/></dataSet><dataSet config="generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\build\intermediates\shader_assets\debug\out"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncLocalStorageUtil.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncLocalStorageUtil.class
+new file mode 100644
+index 0000000..a0abe52
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncLocalStorageUtil.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageErrorUtil.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageErrorUtil.class
+new file mode 100644
+index 0000000..8f0c7cd
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageErrorUtil.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageExpoMigration.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageExpoMigration.class
+new file mode 100644
+index 0000000..468936a
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageExpoMigration.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$1.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$1.class
+new file mode 100644
+index 0000000..f767b1e
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$1.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$2.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$2.class
+new file mode 100644
+index 0000000..65b994a
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$2.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$3.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$3.class
+new file mode 100644
+index 0000000..223521f
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$3.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$4.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$4.class
+new file mode 100644
+index 0000000..23227c2
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$4.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$5.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$5.class
+new file mode 100644
+index 0000000..3889b24
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$5.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$6.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$6.class
+new file mode 100644
+index 0000000..7f59708
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule$6.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule.class
+new file mode 100644
+index 0000000..878dddf
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStorageModule.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStoragePackage$1.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStoragePackage$1.class
+new file mode 100644
+index 0000000..b857847
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStoragePackage$1.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStoragePackage.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStoragePackage.class
+new file mode 100644
+index 0000000..ee09b49
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/AsyncStoragePackage.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/BuildConfig.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/BuildConfig.class
+new file mode 100644
+index 0000000..8436c71
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/BuildConfig.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/NativeAsyncStorageModuleSpec.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/NativeAsyncStorageModuleSpec.class
+new file mode 100644
+index 0000000..6b319f7
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/NativeAsyncStorageModuleSpec.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/ReactDatabaseSupplier.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/ReactDatabaseSupplier.class
+new file mode 100644
+index 0000000..89ed5cd
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/ReactDatabaseSupplier.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/SerialExecutor$1.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/SerialExecutor$1.class
+new file mode 100644
+index 0000000..4624f5b
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/SerialExecutor$1.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/SerialExecutor.class b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/SerialExecutor.class
+new file mode 100644
+index 0000000..87346fc
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/javac/debug/classes/com/reactnativecommunity/asyncstorage/SerialExecutor.class differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/local_only_symbol_list/debug/R-def.txt b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/local_only_symbol_list/debug/R-def.txt
+new file mode 100644
+index 0000000..78ac5b8
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/local_only_symbol_list/debug/R-def.txt
+@@ -0,0 +1,2 @@
++R_DEF: Internal format may change without notice
++local
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt
+new file mode 100644
+index 0000000..8b877fe
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt
+@@ -0,0 +1,7 @@
++1<?xml version="1.0" encoding="utf-8"?>
++2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++3    package="com.reactnativecommunity.asyncstorage" >
++4
++5    <uses-sdk android:minSdkVersion="23" />
++6
++7</manifest>
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml
+new file mode 100644
+index 0000000..b888bf4
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.reactnativecommunity.asyncstorage" >
++
++    <uses-sdk android:minSdkVersion="23" />
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/navigation_json/debug/navigation.json b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/navigation_json/debug/navigation.json
+new file mode 100644
+index 0000000..0637a08
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/navigation_json/debug/navigation.json
+@@ -0,0 +1 @@
++[]
+\ No newline at end of file
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar
+new file mode 100644
+index 0000000..4f0fb0f
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar differ
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
+new file mode 100644
+index 0000000..33dc66d
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
+@@ -0,0 +1 @@
++com.reactnativecommunity.asyncstorage
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/outputs/logs/manifest-merger-debug-report.txt b/node_modules/@react-native-async-storage/async-storage/android/build/outputs/logs/manifest-merger-debug-report.txt
+new file mode 100644
+index 0000000..6b78bcb
+--- /dev/null
++++ b/node_modules/@react-native-async-storage/async-storage/android/build/outputs/logs/manifest-merger-debug-report.txt
+@@ -0,0 +1,17 @@
++-- Merging decision tree log ---
++manifest
++ADDED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml:2:1-5:12
++INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml:2:1-5:12
++	package
++		ADDED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml:3:11-58
++		INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml
++	xmlns:android
++		ADDED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml:2:11-69
++uses-sdk
++INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
++INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml
++INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml
++	android:targetSdkVersion
++		INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml
++	android:minSdkVersion
++		INJECTED from C:\Users\Amna\Desktop\lipcoordnet-app\frontend\lipcoordnet-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml
+diff --git a/node_modules/@react-native-async-storage/async-storage/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin b/node_modules/@react-native-async-storage/async-storage/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin
+new file mode 100644
+index 0000000..e9b13a3
+Binary files /dev/null and b/node_modules/@react-native-async-storage/async-storage/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin differ

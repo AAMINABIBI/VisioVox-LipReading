@@ -6,6 +6,12 @@ import { LinearGradient } from "expo-linear-gradient"
 import Icon from "react-native-vector-icons/MaterialIcons"
 import { useAuth } from "../contexts/AuthContext"
 import { useTheme } from "../contexts/ThemeContext"
+import { useNavigation, type NavigationProp } from "@react-navigation/native"
+
+type AuthStackParamList = {
+  Login: undefined
+  Signup: undefined
+}
 
 const SignupScreen = () => {
   const [email, setEmail] = useState("")
@@ -14,6 +20,7 @@ const SignupScreen = () => {
   const [loading, setLoading] = useState(false)
   const { signup } = useAuth()
   const { currentTheme } = useTheme()
+  const navigation = useNavigation<NavigationProp<AuthStackParamList>>()
 
   const handleSignup = async () => {
     if (!email || !password || !confirmPassword) {
@@ -39,6 +46,10 @@ const SignupScreen = () => {
     } finally {
       setLoading(false)
     }
+  }
+
+  const handleLoginNavigation = () => {
+    navigation.navigate("Login")
   }
 
   return (
@@ -108,7 +119,7 @@ const SignupScreen = () => {
           </TouchableOpacity>
         </LinearGradient>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleLoginNavigation} disabled={loading}>
           <Text style={[styles.link, { color: currentTheme.primaryColor }]}>Already have an account? Sign In</Text>
         </TouchableOpacity>
       </View>

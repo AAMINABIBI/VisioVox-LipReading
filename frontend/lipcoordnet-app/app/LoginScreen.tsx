@@ -6,6 +6,14 @@ import { LinearGradient } from "expo-linear-gradient"
 import Icon from "react-native-vector-icons/MaterialIcons"
 import { useAuth } from "../contexts/AuthContext"
 import { useTheme } from "../contexts/ThemeContext"
+import { useNavigation, type NavigationProp } from "@react-navigation/native"
+import { auth } from "../firebaseConfig"
+import firebase from "firebase/compat/app"
+
+type AuthStackParamList = {
+  Login: undefined
+  Signup: undefined
+}
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("")
@@ -13,6 +21,7 @@ const LoginScreen = () => {
   const [loading, setLoading] = useState(false)
   const { login } = useAuth()
   const { currentTheme } = useTheme()
+  const navigation = useNavigation<NavigationProp<AuthStackParamList>>()
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -28,6 +37,27 @@ const LoginScreen = () => {
     } finally {
       setLoading(false)
     }
+  }
+
+  const handleForgotPassword = async () => {
+    if (!email) {
+      Alert.alert("Error", "Please enter your email address")
+      return
+    }
+
+    setLoading(true)
+    try {
+      await auth.sendPasswordResetEmail(email)
+      Alert.alert("Success", "Password reset email sent. Please check your inbox.")
+    } catch (error: any) {
+      Alert.alert("Error", error.message || "Failed to send password reset email")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleSignupNavigation = () => {
+    navigation.navigate("Signup")
   }
 
   return (
@@ -80,9 +110,14 @@ const LoginScreen = () => {
           </TouchableOpacity>
         </LinearGradient>
 
-        <TouchableOpacity>
-          <Text style={[styles.link, { color: currentTheme.primaryColor }]}>Forgot Password?</Text>
-        </TouchableOpacity>
+        <View style={styles.linkContainer}>
+          <TouchableOpacity onPress={handleForgotPassword} disabled={loading}>
+            <Text style={[styles.link, { color: currentTheme.primaryColor }]}>Forgot Password?</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleSignupNavigation} disabled={loading}>
+            <Text style={[styles.link, { color: currentTheme.primaryColor }]}>Create Account</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   )
@@ -177,9 +212,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
   },
-  link: {
-    textAlign: "center",
+  linkContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 20,
+  },
+  link: {
     fontSize: 16,
     fontWeight: "500",
   },

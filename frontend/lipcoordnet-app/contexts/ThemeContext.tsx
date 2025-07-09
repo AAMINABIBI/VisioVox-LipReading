@@ -17,6 +17,8 @@ interface ThemeStyles {
   textOnPrimary: string
   textOnSecondary: string
   secondary: string
+  inputBackground: string
+  borderColor: string
 }
 
 // Define theme objects
@@ -30,6 +32,8 @@ const lightTheme: ThemeStyles = {
   textOnPrimary: "#FFFFFF",
   textOnSecondary: "#1E3A8A",
   secondary: "#E5E7EB",
+  inputBackground: "#F9FAFB",
+  borderColor: "#E5E7EB",
 }
 
 const darkTheme: ThemeStyles = {
@@ -42,6 +46,8 @@ const darkTheme: ThemeStyles = {
   textOnPrimary: "#FFFFFF",
   textOnSecondary: "#F9FAFB",
   secondary: "#4B5563",
+  inputBackground: "#4B5563",
+  borderColor: "#6B7280",
 }
 
 // Define context value type
